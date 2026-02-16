@@ -1,0 +1,49 @@
+{
+  "menu": [
+    {
+      "label": "Billing",
+      "icon": "billing",
+      "route": "/billing"
+    },
+    {
+      "label": "Employee",
+      "icon": "user",
+      "route": "/admin/dashboard/employeeslist"
+    },
+    {
+      "label": "My Company",
+      "icon": "company",
+      "route": "/admin/dashboard/viewcompany"
+    },
+    {
+      "label": "Subscription",
+      "icon": "subscription_icon",
+      "route": "/admin/dashboard/subscriptionlist"
+    },
+    {
+      "label": "My Profile",
+      "icon": "profile",
+      "route": "/profile"
+    },
+    {
+      "label": "API Kit",
+      "icon": "api",
+      "route": "/api-kit"
+    },
+    {
+      "label": "Faq",
+      "icon": "faq",
+      "route": "/faq"
+    },
+    {
+      "label": "Change Password",
+      "icon": "password",
+      "route": "/admin/dashboard/changepassword"
+    },
+    {
+      "label": "Logout",
+      "icon": "logout",
+      "route": "/logout"
+    }
+  ]
+}
