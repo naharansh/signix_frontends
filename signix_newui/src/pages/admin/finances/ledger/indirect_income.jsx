@@ -1,3 +1,4 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../components/ui/Button";
 import {
   Card,
@@ -15,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../../components/ui/select";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Indirect_Income = () => {
   return (
@@ -178,3 +180,22 @@ export const Indirect_Income = () => {
     </>
   );
 };
+export const Indirect_Income_list=()=>{
+   const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
+}

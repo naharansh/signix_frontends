@@ -192,3 +192,21 @@ export const Api_key=()=>{
         </>
     )
 }
+export const Api_KEy_List=()=>{
+  const columnhelper = createColumnHelper();
+            const column = [
+              columnhelper.accessor("sno", {
+                header: "S.no",
+                cell: (info) => info.getValue(),
+              }),
+              columnhelper.accessor("contactgroup", {
+                header: "Contact Group",
+                cell: (info) => info.getValue(),
+              }),
+            ];
+            return (
+              <>
+                <DataTable columns={column} data={data} />
+              </>
+            );
+}

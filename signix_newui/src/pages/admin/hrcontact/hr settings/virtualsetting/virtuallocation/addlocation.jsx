@@ -1,17 +1,23 @@
-import { Button } from "../../../../../../components/ui/Button"
-import { Card, CardContent, CardFooter, CardHeader } from "../../../../../../components/ui/card"
-import { Input } from "../../../../../../components/ui/input"
-import { Label } from "../../../../../../components/ui/label"
+import { createColumnHelper } from "@tanstack/react-table";
+import { Button } from "../../../../../../components/ui/Button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "../../../../../../components/ui/card";
+import { Input } from "../../../../../../components/ui/input";
+import { Label } from "../../../../../../components/ui/label";
+import { DataTable } from "../../../../../../utils/datatable";
 
-export const Add_Location=()=>{
-    return (
-        <>
-        <div className="min-h-full py-6">
+export const Add_Location = () => {
+  return (
+    <>
+      <div className="min-h-full py-6">
         <form>
           <Card className="max-w-4xl rounded-none mx-auto border border-none shadow-none">
             <CardContent>
               <div className="max-w-4xl mx-auto bg-white rounded-none shadow-md  py-3">
-            
                 <div className="grid grid-cols-12 gap-4 items-center my-3 px-4">
                   <Label className="col-span-3">cDt</Label>
                   <Input
@@ -54,13 +60,13 @@ export const Add_Location=()=>{
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                      <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Coordinates</Label>
                   <Input
                     type="text"
                     className="col-span-4 border rounded-none px-3 py-2  outline-none"
                   />
-                    <Input
+                  <Input
                     type="text"
                     className="col-span-5 border rounded-none px-3 py-2  outline-none"
                   />
@@ -90,9 +96,27 @@ export const Add_Location=()=>{
               </div>
             </CardFooter>
           </Card>
-        
         </form>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
+export const Location_list = () => {
+  const data=[]
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
+    </>
+  );
+};

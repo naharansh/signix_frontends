@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { Card, CardContent } from '../../../../components/ui/card'
 import data from '../../../../utils/data.json'
 import { gst_docks } from '../../../../utils/iconmap'
@@ -16,6 +17,7 @@ export const Attendance_Settings=()=>{
         return
     }
     const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-one').subsubmenu
+    const navigate=useNavigate()
 
     return(
         <>
@@ -29,7 +31,7 @@ export const Attendance_Settings=()=>{
                        key={menu.id}
                        className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                        onClick={() => {
-                       
+                        navigate(`${menu.route}`)
                        }}
                      >
                        <CardContent className="flex items-center h-full space-x-3">
@@ -64,6 +66,8 @@ export const Holiday_settings=()=>{
         return
     }
     const sub_sub_menu=sub_menu.find(ssm=>ssm.id==='submenu-three').subsubmenu
+ const navigate=useNavigate()
+
      return(
         <>
          <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -76,7 +80,7 @@ export const Holiday_settings=()=>{
                        key={menu.id}
                        className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                        onClick={() => {
-                       
+                        navigate(`${menu.route}`)
                        }}
                      >
                        <CardContent className="flex items-center h-full space-x-3">
@@ -108,8 +112,7 @@ export const Shift_Settings=()=>{
         return
     }
     const submenu=mainmenu.find(sm=>sm.id==='record-five').subMenus
-    // console.log(submenu)
-    
+   const navigate=useNavigate()
     if(!submenu)
     {
         return
@@ -127,7 +130,7 @@ export const Shift_Settings=()=>{
                        key={menu.id}
                        className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                        onClick={() => {
-                       
+                          navigate(`${menu.route}`)
                        }}
                      >
                        <CardContent className="flex items-center h-full space-x-3">
@@ -158,7 +161,7 @@ export const Leave_Submenu=()=>{
         return
     }
     const submenu=mainmenu.find(sm=>sm.id==='record-five').subMenus
-    // console.log(submenu)
+const navigate=useNavigate()
     
     if(!submenu)
     {
@@ -176,8 +179,8 @@ export const Leave_Submenu=()=>{
                      <Card
                        key={menu.id}
                        className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
-                       onClick={() => {
-                       
+                        onClick={() => {
+                          navigate(`${menu.route}`)
                        }}
                      >
                        <CardContent className="flex items-center h-full space-x-3">
@@ -215,6 +218,7 @@ export const Virtual_Acccount=()=>{
         return
     }
     const subsubmenus=submenu.find(ssm=>ssm.id ==='submenu-six').subsubmenu
+    const navigate=useNavigate()
     return (
         <>
              <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -226,8 +230,8 @@ export const Virtual_Acccount=()=>{
                      <Card
                        key={menu.id}
                        className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
-                       onClick={() => {
-                       
+                        onClick={() => {
+                          navigate(`${menu.route}`)
                        }}
                      >
                        <CardContent className="flex items-center h-full space-x-3">
@@ -258,7 +262,7 @@ export const Traninerr=()=>{
         return
     }
     const submenu=mainmenu.find(sm=>sm.id==='record-five').subMenus
-    // console.log(submenu)
+       const navigate=useNavigate()
     
     if(!submenu)
     {
@@ -276,8 +280,8 @@ export const Traninerr=()=>{
                      <Card
                        key={menu.id}
                        className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
-                       onClick={() => {
-                       
+                        onClick={() => {
+                          navigate(`${menu.route}`)
                        }}
                      >
                        <CardContent className="flex items-center h-full space-x-3">

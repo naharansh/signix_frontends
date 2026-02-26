@@ -1,6 +1,6 @@
 {
   "switchMenu": [
-      {
+    {
       "id": "Dashboard",
       "label": "Dashboard",
       "icon": "download",
@@ -11,21 +11,18 @@
           "label": "Customers",
           "icon": "debters",
           "route": "/admin/dashboard/customers"
-          
         },
-           {
+        {
           "id": "menu-two",
           "label": "Products",
           "icon": "trainnings",
           "route": "/admin/dashboard/products"
-          
         },
-           {
+        {
           "id": "menu-three",
           "label": "Orders",
           "icon": "orders",
           "route": "/admin/dashboard/orders"
-        
         }
       ]
     },
@@ -40,7 +37,7 @@
           "id": "record-one",
           "label": "Vochours",
           "icon": "book",
-          "route": "#",
+          "route": "/admin/finance/vouchers",
           "subMenus": [
             {
               "id": "submenu-one",
@@ -51,19 +48,19 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Sale Invoice",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/Salemanagement/salesinvoice",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Sale TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Salemanagement/SaleTids",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Sale Return (Cr. Note with Item)",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Salemanagement/Salereturn",
                   "icon": "docs"
                 },
                 {
@@ -75,7 +72,7 @@
                 {
                   "id": "subsubmenu-five",
                   "label": "BI Sales",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/Salemanagement/bisales",
                   "icon": "del"
                 },
                 {
@@ -87,13 +84,13 @@
                 {
                   "id": "subsubmenu-seven",
                   "label": "Recurring Instructions",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Salemanagement/recurrence",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-eight",
                   "label": "Recurring Projection",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Salemanagement/recurrence",
                   "icon": "docs"
                 },
                 {
@@ -113,30 +110,29 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Purchase Invoice",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/purchasemanagement/purchaseinvoice",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Purchase TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/purchasemanagement/purchasereturntid",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Purchase Return (Dr. Note with Item)",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/purchasemanagement/purchasereturn",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Purchase Return TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/purchasemanagement/purchasereturntid",
                   "icon": "docs"
                 }
               ]
             },
-
             {
               "id": "submenu-three",
               "label": "Receipt Management",
@@ -146,13 +142,13 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Receipts",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/Receipt_Management/recipt",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Proposed Receipt",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Receipt_Management/list",
                   "icon": "docs"
                 }
               ]
@@ -166,20 +162,46 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Payments",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/payment_management/list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Proposed Payment",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/payment_management/proposed_list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Proposed Payment Management",
-                  "route": "#",
-                  "icon": "dashboard"
+                  "route": "/admin/finance/vouchers/payment_management/proposed_payment_management",
+                  "icon": "dashboard",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Pending",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fourth",
+                      "label": "All",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    }
+                  ]
                 }
               ]
             },
@@ -192,13 +214,13 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Proposed Contra",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/contra_management/list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Contra",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/contra_management/list",
                   "icon": "docs"
                 }
               ]
@@ -244,19 +266,19 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Receipt Note",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Receipt_Note_Management/receipt_list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Receipt Note TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Receipt_Note_Management/receipt_note",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Receipt Note TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Receipt_Note_Management/rejection_out",
                   "icon": "docs"
                 },
                 {
@@ -276,13 +298,13 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Material In",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Materials_in",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Material In TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Material",
                   "icon": "docs"
                 }
               ]
@@ -296,13 +318,13 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Material Out",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Material_Out/list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Material Out TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Material_Out/list",
                   "icon": "docs"
                 }
               ]
@@ -310,7 +332,8 @@
             {
               "id": "sub-tenth",
               "label": "Journals",
-              "icon": "journal"
+              "icon": "journal",
+              "route": "/admin/finance/vouchers/addjournal"
             },
             {
               "id": "sub-eleventh",
@@ -321,25 +344,25 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Proforma Invoices",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/proposals/list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Proforma TIDs",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/proposals/listtid",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Quotations",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/proposals/list",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Quotations TIDs",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/finance/vouchers/proposals/listtid",
                   "icon": "docs"
                 },
                 {
@@ -351,7 +374,7 @@
                 {
                   "id": "subsubmenu-sixth",
                   "label": "Material Request",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/materiallist",
                   "icon": "docs"
                 }
               ]
@@ -359,7 +382,8 @@
             {
               "id": "sub-twelewth",
               "label": "Stoack Journals",
-              "icon": "journal"
+              "icon": "journal",
+              "route": "/admin/finance/vouchers/stock_journal"
             },
             {
               "id": "sub-thrirteen",
@@ -370,13 +394,13 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "BOM",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/production/BOM",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Mfg Journal",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/production/manufacture",
                   "icon": "docs"
                 }
               ]
@@ -390,50 +414,174 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Purchase Order",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "purchase_order"
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/purchase_order",
+                  "icon": "purchase_order",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Issued",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/purchase_order/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Deleverd",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/purchase_order/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-three",
+                      "label": "Invoiced",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/purchase_order/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fourth",
+                      "label": "All",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/purchase_order/list",
+                      "icon": "docs"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Deliveries",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/deleveries",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Pending",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/deleveries/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "QC Done",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/deleveries/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-three",
+                      "label": "Packing Done",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/deleveries/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fourth",
+                      "label": "GRN Done",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/deleveries/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fifth",
+                      "label": "Invoiced",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/deleveries/list",
+                      "icon": "docs"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Quality Check",
-                  "route": "#",
-                  "icon": "quality_check"
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/quality",
+                  "icon": "quality_check",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Pending",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/quality/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "QC Done",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/quality/list",
+                      "icon": "docs"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Barcode",
                   "route": "/admin/finance/vouchers/Items",
-                  "icon": "barcodes"
+                  "icon": "barcodes",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Pending",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fourth",
+                      "label": "All",
+                      "route": "/admin/finance/vouchers/payment_management/proposed_payment_management/pending",
+                      "icon": "docs"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-fifth",
                   "label": "Packaging",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/packageing",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-sixth",
                   "label": "GRN",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/GRN",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-seven",
                   "label": "Invoices (Draft)",
-                  "route": "#",
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/Invoices",
                   "icon": "docs"
                 },
                 {
                   "id": "subsubmenu-eight",
                   "label": "MDM",
-                  "route": "#",
-                  "icon": "dashboard"
+                  "route": "/admin/finance/vouchers/Purchase_via_PO/MDN",
+                  "icon": "dashboard",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Inspection Areas",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/MDN/inspection/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Packing Tables",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/MDN/packing/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-three",
+                      "label": "Pickup Area",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/MDN/pickup/list",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fourth",
+                      "label": "Allocation Area",
+                      "route": "/admin/finance/vouchers/Purchase_via_PO/MDN/allocation/list",
+                      "icon": "docs"
+                    }
+                  ]
                 }
               ]
             }
@@ -443,7 +591,7 @@
           "id": "record-two",
           "label": "Ledger Management",
           "icon": "receipt",
-          "route": "#",
+          "route": "/admin/finance/ledger",
           "subMenus": [
             {
               "id": "ledger-one",
@@ -580,7 +728,7 @@
             {
               "id": "ledger-twenty_three",
               "label": "Customers on Map",
-              "route": "#",
+              "route": "/admin/finance/ledger/customer_on_map",
               "icon": "docs"
             },
             {
@@ -624,14 +772,96 @@
             {
               "id": "item-one",
               "label": "Item Master",
-              "route": "/admin/finance/items/additem",
+              "route": "/admin/finance/items/itemlist",
               "icon": "docs"
             },
             {
               "id": "item-two",
               "label": "Item Settings",
-              "route": "#",
-              "icon": "item_settings"
+              "route": "/admin/finance/items/itemsettings",
+              "icon": "item_settings",
+              "subsubmenus": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Category",
+                  "route": "/admin/finance/items/itemsettings/category_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Sub Category",
+                  "route": "/admin/finance/items/itemsettings/sub_Category_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-three",
+                  "label": "Sub Sub Category",
+                  "route": "/admin/finance/items/itemsettings/sub_sub_Category_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-four",
+                  "label": "Department",
+                  "route": "/admin/finance/items/itemsettings/department_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-fifth",
+                  "label": "Item Type",
+                  "route": "/admin/finance/items/itemsettings/item_type_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-sixth",
+                  "label": "Brands",
+                  "route": "/admin/finance/items/itemsettings/brand_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-seven",
+                  "label": "Models",
+                  "route": "/admin/finance/items/itemsettings/models_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-eight",
+                  "label": "HSN SAC",
+                  "route": "/admin/finance/items/itemsettings/hassac_list",
+                  "icon": "docs"
+                },
+                {
+                  "id": "subsubmenu-nineth",
+                  "label": "Unit Management",
+                  "route": "/admin/finance/items/itemsettings/unit_management",
+                  "icon": "unit",
+                  "subsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Units",
+                      "route": "/admin/finance/items/itemsettings/unit_management/units",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Sizes",
+                      "route": "/admin/finance/items/itemsettings/unit_management/size",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-three",
+                      "label": "Decimal Settings",
+                      "route": "/admin/finance/items/itemsettings/unit_management/decimal_settings",
+                      "icon": "docs"
+                    },
+                    {
+                      "id": "subsubmenu-fourth",
+                      "label": "UQC",
+                      "route": "/admin/finance/items/itemsettings/hassac_list",
+                      "icon": "docs"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "item-three",
@@ -642,20 +872,72 @@
             {
               "id": "item-four",
               "label": "Material Centers",
-              "route": "#",
+              "route": "/admin/finance/items/materialslist",
               "icon": "docs"
             },
             {
               "id": "item-fifth",
               "label": "Membership Settings",
-              "route": "#",
-              "icon": "membership"
+              "route": "/admin/finance/items/memebership",
+              "icon": "membership",
+              "subsubmenus": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Membership Plans",
+                  "route": "/admin/finance/items/memebership/memberShip_plans",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Subscribed Members",
+                  "route": "/admin/finance/items/memebership/Subscribed_Members",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-three",
+                  "label": "Fee & Charges",
+                  "route": "/admin/finance/items/memebership/feesandCharges",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-four",
+                  "label": "Wallet Coupons",
+                  "route": "/admin/finance/items/memebership/wallet_coupeans",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-five",
+                  "label": "Coupon Ledger",
+                  "route": "/admin/finance/items/memebership/Coupon_Ledger",
+                  "icon": "assets_audits"
+                }
+              ]
             },
             {
               "id": "item-sixth",
               "label": "Subscription Settings",
-              "route": "#",
-              "icon": "dashboard"
+              "route": "/admin/finance/items/subscriptionsettings",
+              "icon": "dashboard",
+              "subsubmenus": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Subscription Plan",
+                  "route": "/admin/finance/items/suscriptionsettings/subscription_plan_list",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Subscription Rate",
+                  "route": "/admin/finance/items/subscriptionsettings/subscription_Rate_list",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-three",
+                  "label": "Subscribers",
+                  "route": "/admin/finance/items/suscriptionsettings/subscribers_list",
+                  "icon": "assets_audits"
+                }
+              ]
             }
           ]
         },
@@ -663,7 +945,7 @@
           "id": "record-four",
           "label": "Financial Statements",
           "icon": "finance",
-          "route": "#",
+          "route": "/admin/finance/financial",
           "subMenus": [
             {
               "id": "statement-one",
@@ -701,24 +983,52 @@
           "id": "record-fifith",
           "label": "Inventory",
           "icon": "inventory",
-          "route": "#",
+          "route": "/admin/finance/Inventatory",
           "subMenus": [
             {
               "id": "item-one",
               "label": "STOCK MASTERS",
-              "route": "#",
-              "icon": "stock_master"
+              "route": "/admin/finance/Inventatory/stock_master",
+              "icon": "stock_master",
+              "subsubmenus": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Batch Master",
+                  "route": "/admin/finance/Inventatory/stockmaster/batchmaster",
+                  "icon": "contats"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Serial Master",
+                  "route": "/admin/finance/Inventatory/stockmaster/serialmaster",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "item-two",
               "label": "STOCK IN HAND",
-              "route": "/admin/finance/Inventatory/Add_Opening_Stock",
-              "icon": "stock_in"
+              "route": "/admin/finance/Inventatory/stockinhand",
+              "icon": "stock_in",
+              "subsubmenus": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Stock (Batch & Item & Unit & Location Wise)",
+                  "route": "/admin/finance/Inventatory/stockinhand/stocks",
+                  "icon": "contats"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Stock (Item & Unit & Location Wise)",
+                  "route": "/admin/finance/Inventatory/stockinhand/location_wise",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "item-three",
               "label": "TRADE HISTORY",
-              "route": "#",
+              "route": "/admin/finance/Inventatory/tradehistory",
               "icon": "docs"
             },
             {
@@ -730,7 +1040,7 @@
             {
               "id": "item-fifth",
               "label": "Distributor Summary",
-              "route": "/admin/finance/Inventatory/Distributor_Summery",
+              "route": "/admin/finance/Inventatory/distributor",
               "icon": "docs"
             }
           ]
@@ -739,13 +1049,39 @@
           "id": "record-sixth",
           "label": "Assets Audit Console",
           "icon": "payroll",
-          "route": "#",
+          "route": "/admin/finance/assets_audits",
           "subMenus": [
             {
               "id": "assets-one",
               "label": "Asset Audit Process 1",
-              "route": "#",
-              "icon": "assets_audits"
+              "route": "/admin/finance/assets_audits/asset_audit_console",
+              "icon": "assets_audits",
+              "subsubmenus": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Asset Registrations",
+                  "route": "/admin/finance/assets_audits/asset_audit_console/asset_Registration",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "BOM",
+                  "route": "/admin/finance/assets_audits/asset_audit_console/assetbom",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-three",
+                  "label": "Asset Group",
+                  "route": "/admin/finance/assets_audits/asset_audit_console/asset_group/asset_subgroup",
+                  "icon": "assets_audits"
+                },
+                {
+                  "id": "subsubmenu-four",
+                  "label": "Asset Selection List",
+                  "route": "/admin/finance/assets_audits/asset_audit_console/Asset_Selection_list",
+                  "icon": "assets_audits"
+                }
+              ]
             }
           ]
         },
@@ -753,30 +1089,30 @@
           "id": "record-seventh",
           "label": "Barcode Management",
           "icon": "barcode",
-          "route": "#",
+          "route": "/admin/finance/barcode",
           "subMenus": [
             {
               "id": "barcode-one",
               "label": "Barcode Settings",
-              "route": "/admin/finance/barcode/settings",
-              "icon": ""
-            },
-            {
-              "id": "barcode-one",
-              "label": "Paper Size",
-              "route": "/admin/finance/barcode/papersize",
+              "route": "/admin/finance/barcode/settingslist",
               "icon": ""
             },
             {
               "id": "barcode-two",
+              "label": "Paper Size",
+              "route": "/admin/finance/barcode/papersize/list",
+              "icon": ""
+            },
+            {
+              "id": "barcode-three",
               "label": "Label Contents",
               "route": "/admin/finance/barcode/labelcontent",
               "icon": ""
             },
             {
-              "id": "barcode-three",
+              "id": "barcode-four",
               "label": "Field Tags",
-              "route": "/admin/finance/barcode/addfield",
+              "route": "/admin/finance/barcode/field",
               "icon": ""
             }
           ]
@@ -785,7 +1121,7 @@
           "id": "record-eight",
           "label": "GST Reports",
           "icon": "dashboard",
-          "route": "#",
+          "route": "/admin/finance/gst_management",
           "subMenus": [
             {
               "id": "gst-one",
@@ -811,18 +1147,18 @@
           "id": "record-ninth",
           "label": "Contact Management",
           "icon": "contacts",
-          "route": "#",
+          "route": "/admin/finance/contactus",
           "subMenus": [
             {
               "id": "contacts-one",
               "label": "Contact Groups",
-              "route": "/admin/finance/contactus/addcontactgroup",
+              "route": "/admin/finance/contactus/contactlist",
               "icon": "contats"
             },
             {
               "id": "submenu-two",
               "label": "Contacts",
-              "route": "/admin/finance/contactus/addcontact",
+              "route": "/admin/finance/contactus/contact",
               "icon": "contactus"
             }
           ]
@@ -831,30 +1167,30 @@
           "id": "record-tenth",
           "label": "Whitebills Reports",
           "icon": "whitebills",
-          "route": "#",
+          "route": "/admin/finance/whitebills",
           "subMenus": [
             {
               "id": "bill-one",
               "label": "Outstanding Collection Amt",
-              "route": "#",
+              "route": "/admin/finance/whitebills/outstandingcollectionamt",
               "icon": "contats"
             },
             {
               "id": "bill-two",
               "label": "Outstanding Payments Amt",
-              "route": "#",
+              "route": "/admin/finance/whitebills/outstandingpaymentamt",
               "icon": "contactus"
             },
             {
               "id": "bill-three",
               "label": "Unadjusted Vouchers",
-              "route": "#",
+              "route": "/admin/finance/whitebills/unadjustedvoucher",
               "icon": "contats"
             },
             {
               "id": "bill-four",
               "label": "Outstanding Collection Material",
-              "route": "#",
+              "route": "/admin/finance/whitebills/outstandingcollectionmaterial",
               "icon": "contactus"
             }
           ]
@@ -863,13 +1199,45 @@
           "id": "record-eleventh",
           "label": "Finance Settings",
           "icon": "Configurations",
-          "route": "#",
+          "route": "/admin/finance/settings",
           "subMenus": [
             {
               "id": "setting-one",
               "label": "Country Planner",
-              "route": "#",
-              "icon": "location"
+              "route": "/admin/finance/settings/countryPlanner",
+              "icon": "location",
+              "subsubmenus": [
+                {
+                  "id": "bill-one",
+                  "label": "Country",
+                  "route": "/admin/finance/settings/countryPlanner/countrylist",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-two",
+                  "label": "State",
+                  "route": "/admin/finance/settings/countryPlanner/state",
+                  "icon": "contactus"
+                },
+                {
+                  "id": "bill-three",
+                  "label": "City",
+                  "route": "/admin/finance/settings/countryPlanner/city",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-four",
+                  "label": "Pincode",
+                  "route": "/admin/finance/settings/countryPlanner/pincode",
+                  "icon": "contactus"
+                },
+                {
+                  "id": "bill-fifth",
+                  "label": "Locations",
+                  "route": "/admin/finance/settings/countryPlanner/location",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "setting-two",
@@ -880,55 +1248,143 @@
             {
               "id": "setting-three",
               "label": "Voucher Customizations",
-              "route": "#",
-              "icon": "voucherss"
+              "route": "/admin/finance/settings/vouchercustomization",
+              "icon": "voucherss",
+              "subsubmenus": [
+                {
+                  "id": "bill-one",
+                  "label": "Voucher Series Settings",
+                  "route": "/admin/finance/settings/vouchercustomization/Voucher_Series_list",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-two",
+                  "label": "Voucher Types",
+                  "route": "/admin/finance/settings/vouchercustomization/Voucher_types_list",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "setting-four",
               "label": "GST Plugins",
-              "route": "#",
+              "route": "/admin/finance/settings/gst_config/E-Invoice",
               "icon": "gsttax"
             },
             {
               "id": "setting-fifth",
               "label": "Voucher Feature",
-              "route": "/admin/finance/settings/voucher_settings",
+              "route": "/admin/finance/settings/voucher_features",
               "icon": "docs"
             },
             {
               "id": "setting-sixth",
               "label": "Terms and Conditions",
-              "route": "/admin/finance/terms",
+              "route": "/admin/finance/settings/termslist",
               "icon": "docs"
             },
             {
               "id": "setting-seventh",
               "label": "Tally Plugins",
-              "route": "#",
-              "icon": "tally"
+              "route": "/admin/finance/settings/tally_config",
+              "icon": "tally",
+              "subsubmenus": [
+                {
+                  "id": "bill-one",
+                  "label": "Tally Configuration",
+                  "route": "/admin/finance/settings/tally_config/TallyConfig",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-two",
+                  "label": "Xml to Excel Converter",
+                  "route": "/admin/finance/settings/tally_config/xmlconfig",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "setting-eigth",
               "label": "Voucher Settings",
-              "route": "#",
-              "icon": "dashboard"
+              "route": "/admin/finance/settings/voucher_settings",
+              "icon": "dashboard",
+              "subsubmenus": [
+                {
+                  "id": "bill-one",
+                  "label": "Payment Terms",
+                  "route": "/admin/finance/settings/voucher_settings/paymentterms",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-two",
+                  "label": "Delivery Mode",
+                  "route": "/admin/finance/settings/voucher_settings/delevery",
+                  "icon": "contactus"
+                },
+                {
+                  "id": "bill-three",
+                  "label": "Dispatch Mode",
+                  "route": "/admin/finance/settings/voucher_settings/dispatchtype",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-four",
+                  "label": "Sale Type",
+                  "route": "/admin/finance/settings/voucher_settings/salestypes",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "setting-nineth",
               "label": "Payout",
-              "route": "#",
-              "icon": "dashboard"
+              "route": "/admin/finance/settings/payout",
+              "icon": "dashboard",
+              "subsubmenus": [
+                {
+                  "id": "bill-one",
+                  "label": "ICICI Payout",
+                  "route": "/admin/finance/settings/payouts/ICICI_Payout_list",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-two",
+                  "label": "Transactions",
+                  "route": "/admin/finance/settings/payouts/transactions_list",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "setting-tenth",
               "label": "Delivery Plugins",
-              "route": "#",
-              "icon": "delevierys"
+              "route": "/admin/finance/settings/deleveryplugins",
+              "icon": "delevierys",
+              "subsubmenus": [
+                {
+                  "id": "bill-one",
+                  "label": "Delivery Partners",
+                  "route": "/admin/finance/settings/deleveryplugins/partners_list",
+                  "icon": "contats"
+                },
+                {
+                  "id": "bill-two",
+                  "label": "Delivery One",
+                  "route": "/admin/finance/settings/deleveryplugins/deleveryone",
+                  "icon": "contactus"
+                },
+                {
+                  "id": "bill-three",
+                  "label": "Nimbus Post",
+                  "route": "/admin/finance/settings/deleveryplugins/Nimbus_Post_list",
+                  "icon": "contactus"
+                }
+              ]
             },
             {
               "id": "setting-eleventh",
               "label": "Insensitive Ledger",
-              "route": "/admin/finance/settings/insensitiveledger",
+              "route": "/admin/finance/settings/insensitiveledgerlist",
               "icon": "docs"
             }
           ]
@@ -947,29 +1403,27 @@
           "label": "Employee Records",
           "icon": "UserSquare",
           "route": "/admin/HR_Dashboard/employee_recrods",
-          
           "subMenus": [
             {
               "id": "submenu-one",
               "label": "Employees",
               "icon": "employees",
               "route": "/admin/HR_Dashboard/employee_recrods/employee/employeelist",
-             "hidden":false
-
+              "hidden": false
             },
             {
               "id": "submenu-TWO",
               "label": "Organogram Tree",
               "icon": "organotree",
               "route": "/admin/HR_Dashboard/employee_recrods/organotree/addorganotree",
-              "hidden":true
+              "hidden": true
             },
             {
               "id": "submenu-THREE",
               "label": "AI Agents",
               "icon": "ai_agent",
-              "route": "/admin/HR_Dashboard/employee_recrods/aiagent/addaiagent",
-              "hidden":true
+              "route": "/admin/HR_Dashboard/employee_recrods/aiagent",
+              "hidden": true
             }
           ]
         },
@@ -977,30 +1431,30 @@
           "id": "record-two",
           "label": "Payroll",
           "icon": "payroll",
-          "route": "#",
+          "route": "/admin/HR_Dashboard/payroll",
           "subMenus": [
             {
               "id": "submenu-one",
               "label": "Salary Settings",
               "icon": "salery",
-              "route": "/admin/HR_Dashboard/payroll/salessetting",
+              "route": "/admin/HR_Dashboard/payroll/salarysettings",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "CTC Groups",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/payroll/salarysettings/ctc_group",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "CTC Components",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/payroll/salarysettings/ctcomponent",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Assign CTC ",
-                  "route": "/admin/HR_Dashboard/payroll/salarysettings/addctc",
+                  "route": "/admin/HR_Dashboard/payroll/salarysettings/ctc_list",
                   "icon": "del"
                 }
               ]
@@ -1009,7 +1463,7 @@
               "id": "submenu-two",
               "label": "Earning Calculator (by HR)",
               "icon": "salerydistribute",
-              "route": "/admin/finance/vouchers"
+              "route": "/admin/HR_Dashboard/payroll/salery"
             },
             {
               "id": "submenu-three",
@@ -1020,37 +1474,37 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "Trans Failed",
-                  "route": "/admin/HR_Dashboard/payroll/salarydispursal/transit",
+                  "route": "/admin/HR_Dashboard/payroll/salarydisbursal/salary_disbursal_list",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "In Transit",
-                  "route": "/admin/HR_Dashboard/payroll/salarydispursal/transit",
+                  "route": "/admin/HR_Dashboard/payroll/salarydisbursal/salary_disbursal_list",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Hold ",
-                  "route": "/admin/HR_Dashboard/payroll/salarydispursal/transit",
+                  "route": "/admin/HR_Dashboard/payroll/salarydisbursal/salary_disbursal_list",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Paid",
-                  "route": "/admin/HR_Dashboard/payroll/salarydispursal/transit",
+                  "route": "/admin/HR_Dashboard/payroll/salarydisbursal/salary_disbursal_list",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-fifth",
                   "label": "Approved",
-                  "route": "/admin/HR_Dashboard/payroll/salarydispursal/transit",
+                  "route": "/admin/HR_Dashboard/payroll/salarydisbursal/salary_disbursal_list",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-sixth",
                   "label": "All Salary",
-                  "route": "/admin/HR_Dashboard/payroll/salarydispursal/transit",
+                  "route": "#",
                   "icon": "del"
                 }
               ]
@@ -1061,25 +1515,25 @@
           "id": "record-three",
           "label": "Attendance Reports",
           "icon": "attendence",
-          "route": "#",
+          "route": "/admin/HR_Dashboard/attendence",
           "subMenus": [
             {
               "id": "submenu-one",
               "label": "Daily Attendance",
               "icon": "book",
-              "route": "/admin/finance/vouchers"
+              "route": "/admin/HR_Dashboard/attendence/dailyattendence"
             },
             {
               "id": "submenu-two",
               "label": "Monthly Attendance",
               "icon": "book",
-              "route": "/admin/finance/vouchers"
+              "route": "/admin/HR_Dashboard/attendence/monthlyattendence"
             },
             {
               "id": "submenu-three",
               "label": "Daily Attendance Log",
               "icon": "book",
-              "route": "/admin/HR_Dashboard/attendence/dailyattendence/adddailyattendencelog"
+              "route": "/admin/HR_Dashboard/attendence/dailyattendence"
             },
             {
               "id": "submenu-four",
@@ -1091,7 +1545,7 @@
               "id": "submenu-five",
               "label": "Day Wise Attendance",
               "icon": "book",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/attendence/daywiseattendence"
             }
           ]
         },
@@ -1099,7 +1553,7 @@
           "id": "record-four",
           "label": "Employee Applications",
           "icon": "employee_application",
-          "route": "#",
+          "route": "/admin/HR_Dashboard/employee_application",
           "subMenus": [
             {
               "id": "submenu-one",
@@ -1109,27 +1563,137 @@
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
-                  "label": "My Team TA Reimbursements",
-                  "route": "#",
-                  "icon": "del"
+                  "label": "My TA Reimbursements",
+                  "route": "/admin/HR_Dashboard/employee_application/taReimbursements/my_taReimbursements",
+                  "icon": "my",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Started",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "start"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Claimed",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team TA Reimbursements",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/taReimbursements/team_taReimbursements",
+                  "icon": "team",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Started",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "start"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Claimed",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All TA Reimbursements",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/taReimbursements/all_taReimbursements",
+                  "icon": "all",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Started",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "start"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Claimed",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Vehicle Management",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/taReimbursements/vehicle_management",
+                  "icon": "veheicle",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Vehicle Types",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Vehicles",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 }
               ]
             },
@@ -1142,20 +1706,116 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My DA Reimbursements",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/daReimbursements/myda",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Started",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "start"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Claimed",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team DA Reimbursements",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/daReimbursements/teamda",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Started",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "start"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Claimed",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All DA Reimbursements",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/daReimbursements/allda",
+                  "icon": "del",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Started",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "start"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Claimed",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 }
               ]
             },
@@ -1168,20 +1828,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My Leave Application",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/leaveapplication/my",
+                  "icon": "my",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team Leave Application",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/leaveapplication/team",
+                  "icon": "team",
+                 "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All Leave Application",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/leaveapplication/all",
+                  "icon": "all",
+                 "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 }
               ]
             },
@@ -1194,20 +1932,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My On Duty Application",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/ondutycall/my",
+                  "icon": "my",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team On Duty Application",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/ondutycall/team",
+                  "icon": "team",
+                 "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All On Duty Application",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/ondutycall/all",
+                  "icon": "all",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 }
               ]
             },
@@ -1220,20 +2036,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My Workday on offday Application",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/workday/my",
+                  "icon": "my",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team Workday on offday Application",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/workday/team",
+                  "icon": "team",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All Workday on offday Application",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/workday/all",
+                  "icon": "all",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 }
               ]
             },
@@ -1246,20 +2140,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My Bonus Incentive Compensation",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/bonusincentive/my",
+                  "icon": "my",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team Bonus Incentive Compensation",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/bonusincentive/team",
+                  "icon": "team",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "claimed"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "applied"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "declined"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "all"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All Bonus Incentive Compensation",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/bonusincentive/all",
+                  "icon": "all",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 }
               ]
             },
@@ -1272,20 +2244,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My Advance",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/advance/my",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team Advance",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/advance/team",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All Advance",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/advance/all",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 }
               ]
             },
@@ -1298,20 +2348,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My Other Reimbursement",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/others/my",
+                  "icon": "my",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team Other Reimbursement",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/others/team",
+                  "icon": "team",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All Other Reimbursement",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/others/all",
+                  "icon": "all",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-five",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 }
               ]
             },
@@ -1324,20 +2452,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My Kaizen List",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/kaizen/my",
+                  "icon": "my",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team Kaizen List",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/kaizen/team",
+                  "icon": "team",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All Kaizen List",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/kaizen/all",
+                  "icon": "all",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 }
               ]
             },
@@ -1350,20 +2556,98 @@
                 {
                   "id": "subsubmenu-one",
                   "label": "My PMS Goals",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/pms/my",
+                  "icon": "del",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "My Team PMS Goals",
-                  "route": "/admin/finance/vouchers/Items",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/pms/team",
+                  "icon": "del",
+                   "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "All PMS Goals",
-                  "route": "#",
-                  "icon": "del"
+                  "route": "/admin/HR_Dashboard/employee_application/pms/all",
+                  "icon": "del",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubsubmenu-one",
+                      "label": "Applied",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-two",
+                      "label": "Approved",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-three",
+                      "label": "Declined",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    },
+                    {
+                      "id": "subsubsubmenu-four",
+                      "label": "all",
+                      "route": "/admin/finance/vouchers/Items",
+                      "icon": "team"
+                    }
+                  ]
                 }
               ]
             }
@@ -1379,19 +2663,18 @@
               "id": "submenu-one",
               "label": "Attendance Settings",
               "icon": "attendence",
-              "route": "#",
-              "hidden":true,
+              "route": "/admin/HR_Dashboard/hrsettings/attendence_settings",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "Attendance Groups",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/attendence_settings/attendence_group",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Attendance Status",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/attendence_settings/attendence_status",
                   "icon": "del"
                 }
               ]
@@ -1400,24 +2683,24 @@
               "id": "submenu-two",
               "label": "Weekoff Groups",
               "icon": "weekoff",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/weefoff"
             },
             {
               "id": "submenu-three",
               "label": "Holiday Settings",
               "icon": "holidaysettings",
-              "route": "#",
+              "route": "/admin/HR_Dashboard/hrsettings/holiday_settings",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "Holiday Group",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/holiday_settings/holiday_group",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Holiday List",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/holiday_settings/holiday_list",
                   "icon": "del"
                 }
               ]
@@ -1426,18 +2709,18 @@
               "id": "submenu-four",
               "label": "Shift Settings",
               "icon": "shift",
-              "route": "#",
+              "route": "/admin/HR_Dashboard/hrsettings/shift_settings",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "Shifts",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/shift_settings/shift",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Time Slots",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/shift_settings/timeslots",
                   "icon": "del"
                 }
               ]
@@ -1446,30 +2729,30 @@
               "id": "submenu-five",
               "label": "Leave Settings",
               "icon": "leavesetting",
-              "route": "#",
+              "route": "/admin/HR_Dashboard/hrsettings/leavetype",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "Leave Groups",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/leavetype/leavegroup",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Leave Policy (Readme)",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/leavetype/leavePolicies",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Leave Policy",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/leavetype/Policy",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Leave Trial Balance",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin//HR_Dashboard/hrsettings/leavetype/leavebalence",
                   "icon": "del"
                 }
               ]
@@ -1478,30 +2761,30 @@
               "id": "submenu-six",
               "label": "Virtual Office Settings",
               "icon": "virtualsettings",
-              "route": "#",
+              "route": "/admin/HR_Dashboard/hrsettings/virtual_acccount",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "Virtual Office",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/virtual_acccount/virtual_office",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Virtual Location",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/virtual_acccount/virtual_location",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-three",
                   "label": "Virtual Office Admin",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/virtual_acccount/admin",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-four",
                   "label": "Assign Virtual Location - Optional",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/virtual_acccount/virtualoptional",
                   "icon": "del"
                 }
               ]
@@ -1510,18 +2793,18 @@
               "id": "submenu-seven",
               "label": "Training Catalogues",
               "icon": "trainnings",
-              "route": "#",
+              "route": "/admin/HR_Dashboard/hrsettings/training-catalogues",
               "subsubmenu": [
                 {
                   "id": "subsubmenu-one",
                   "label": "Training Catalogues",
-                  "route": "#",
+                  "route": "/admin/HR_Dashboard/hrsettings/training-catalogues/catalog",
                   "icon": "del"
                 },
                 {
                   "id": "subsubmenu-two",
                   "label": "Topics",
-                  "route": "/admin/finance/vouchers/Items",
+                  "route": "/admin/HR_Dashboard/hrsettings/training-catalogues/topic",
                   "icon": "del"
                 }
               ]
@@ -1530,7 +2813,7 @@
               "id": "submenu-eight",
               "label": "Biometric Device Setup",
               "icon": "biometric",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/biometric"
             },
             {
               "id": "submenu-ninth",
@@ -1542,13 +2825,13 @@
               "id": "submenu-tenth",
               "label": "Designation",
               "icon": "destination",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/designation"
             },
             {
               "id": "submenu-eleventh",
               "label": "Profiles",
               "icon": "profile",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/profile"
             },
             {
               "id": "submenu-tweleth",
@@ -1560,19 +2843,19 @@
               "id": "submenu-thirtheenth",
               "label": "Leave Type",
               "icon": "docs",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/leavetypes"
             },
             {
               "id": "submenu-fourthent",
               "label": "Expenses Condition",
               "icon": "docs",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/expenses"
             },
             {
               "id": "submenu-fifthteen",
               "label": "Roles and Permissions",
               "icon": "docs",
-              "route": "#"
+              "route": "/admin/HR_Dashboard/hrsettings/roleandpremission"
             }
           ]
         },
@@ -1580,7 +2863,7 @@
           "id": "record-six",
           "label": "Mobile Apps Management",
           "icon": "mobileapp",
-          "route": "#",
+          "route": "/admin/HR_Dashboard/Mobileapplication",
           "subMenus": [
             {
               "id": "submenu-one",
@@ -1604,19 +2887,19 @@
               "id": "submenu-four",
               "label": "Assign Apps",
               "icon": "docs",
-              "route": "/admin/HR_Dashboard/Mobileapplication/ipwishlist"
+              "route": "/admin/HR_Dashboard/Mobileapplication/assignapp"
             },
             {
               "id": "submenu-five",
               "label": "Device Login Logs",
               "icon": "docs",
-              "route": "/admin/HR_Dashboard/Mobileapplication/addmobile"
+              "route": "/admin/HR_Dashboard/Mobileapplication/devicelogin"
             },
             {
-              "id": "submenu-five",
+              "id": "submenu-six",
               "label": "IP Whitelist",
               "icon": "docs",
-              "route": "/admin/HR_Dashboard/Mobileapplication/devicelogin"
+              "route": "/admin/HR_Dashboard/Mobileapplication/ipwishlist"
             }
           ]
         }
@@ -1678,7 +2961,7 @@
               "icon": "geotracker",
               "route": "/admin/sms_Dashboard/config/addtemplates"
             },
-             {
+            {
               "id": "submenu-four",
               "label": "Variables",
               "icon": "geotracker",
@@ -1706,7 +2989,7 @@
           "label": "Dashboard",
           "icon": "dashboard",
           "route": "#",
-          "subMenus":[
+          "subMenus": [
             {
               "id": "submenu-one",
               "label": "Files",
@@ -1728,43 +3011,43 @@
           "label": "Dashboard",
           "icon": "dashboard",
           "route": "#",
-          "subMenus":[
+          "subMenus": [
             {
               "id": "submenu-one",
               "label": "DATA ENTRY",
               "icon": "docs",
               "route": "/admin/file_manager/dashboard/addfiles"
             },
-              {
+            {
               "id": "submenu-two",
               "label": "Settings",
               "icon": "dashboard",
               "route": "/admin/Data_Entry/dashboard/settings",
-              "subsubmenu":[
-                   {
-              "id": "subsubmenu-first",
-              "label": "Process",
-              "icon": "geotracker",
-              "route": "/admin/file_manager/dashboard/addfiles"
-            },
-               {
-              "id": "subsubmenu-second",
-              "label": "Question",
-              "icon": "geotracker",
-              "route": "/admin/file_manager/dashboard/addfiles"
-            },
-               {
-              "id": "subsubmenu-third",
-              "label": "Answer",
-              "icon": "geotracker",
-              "route": "/admin/file_manager/dashboard/addfiles"
-            },
-               {
-              "id": "subsubmenu-fourth",
-              "label": "Input Type",
-              "icon": "geotracker",
-              "route": "/admin/file_manager/dashboard/addfiles"
-            }
+              "subsubmenu": [
+                {
+                  "id": "subsubmenu-first",
+                  "label": "Process",
+                  "icon": "geotracker",
+                  "route": "/admin/file_manager/dashboard/addfiles"
+                },
+                {
+                  "id": "subsubmenu-second",
+                  "label": "Question",
+                  "icon": "geotracker",
+                  "route": "/admin/file_manager/dashboard/addfiles"
+                },
+                {
+                  "id": "subsubmenu-third",
+                  "label": "Answer",
+                  "icon": "geotracker",
+                  "route": "/admin/file_manager/dashboard/addfiles"
+                },
+                {
+                  "id": "subsubmenu-fourth",
+                  "label": "Input Type",
+                  "icon": "geotracker",
+                  "route": "/admin/file_manager/dashboard/addfiles"
+                }
               ]
             },
             {
@@ -1789,7 +3072,526 @@
       "label": "OUTLET TRAIL",
       "icon": "outlet",
       "route": "/admin/outlet",
-      "menus": []
+      "menus": [
+        {
+          "id": "menu-one",
+          "label": "Reports",
+          "icon": "dashboard",
+          "route": "#",
+          "subMenus": [
+            {
+              "id": "submenu-one",
+              "label": "Sub Category Wise Demand",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-two",
+              "label": "Item Wise Demand",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-three",
+              "label": "Route Wise Demand",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-four",
+              "label": "Route Wise Demand (Today)",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-fifth",
+              "label": "DistributorÂ WiseÂ Demand",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-sixth",
+              "label": "status Wise Report",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-seventh",
+              "label": " L2 Ledger Bal",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-eigth",
+              "label": "Sub Category Wise Demand",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-ninth",
+              "label": " Distance Logs",
+              "icon": "docs",
+              "route": "#"
+            }
+          ]
+        },
+        {
+          "id": "menu-two",
+          "label": "pricelist",
+          "icon": "dashboard",
+          "route": "#",
+          "subMenus": [
+            {
+              "id": "submenu-one",
+              "label": "Division",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-two",
+              "label": "Price Contract",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-three",
+              "label": "Price list",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-four",
+              "label": "Discount list",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-fifth",
+              "label": "Offers and Schemes",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-sixth",
+              "label": "Price settings",
+              "icon": "docs",
+              "route": "#"
+            }
+          ]
+        },
+        {
+          "id": "menu-three",
+          "label": "disPatch",
+          "icon": "dashboard",
+          "route": "#",
+          "subMenus": [
+            {
+              "id": "subsubmenu-one",
+              "label": "L1 Adv Dispatch",
+              "icon": "dispatch",
+              "route": "/admin/outlet/dispatch/l1advdispatch",
+              "subsubmenu": [
+                {
+                  "id": "submenu-one",
+                  "label": "Vehicle Check In",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-two",
+                  "label": "Unload",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-three",
+                  "label": "Create Vehicle Plan",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-four",
+                  "label": "Loaded (Item Grp. Wise)",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-five",
+                  "label": "Loaded (Customer Wise)",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-six",
+                  "label": "Dispatched",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-one",
+                  "label": "E-Invoiced",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-seven",
+                  "label": "Gate Out",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-ninth",
+                  "label": "Dispatch Slip",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-tenth",
+                  "label": "Dispatch Slip TID",
+                  "icon": "docs",
+                  "route": "#"
+                }
+              ]
+            },
+            {
+              "id": "submenu-two",
+              "label": " Dispatch Settings",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-three",
+              "label": "Van Dispatch",
+              "icon": "dashboard",
+              "route": "/admin/outlet/dispatch/l1vans",
+              "subsubmenu": [
+                {
+                  "id": "submenu-one",
+                  "label": "L1 Van Dispatch",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-two",
+                  "label": " Load Slip",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-three",
+                  "label": "L2 Van Dispatch",
+                  "icon": "docs",
+                  "route": "#"
+                }
+              ]
+            },
+            {
+              "id": "submenu-four",
+              "label": "disPatch Team",
+              "icon": "docs",
+              "route": "#"
+            }
+          ]
+        },
+        {
+          "id": "menu-four",
+          "label": "PJP",
+          "icon": "dashboard",
+          "route": "#",
+          "subMenus": [
+            {
+              "id": "submenu-one",
+              "label": "L1 PJP",
+              "icon": "pj1",
+              "route": "/admin/outlet/PJP/l1pjp",
+              "subsubmenu": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Distributor PJP",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "WH PJP",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-three",
+                  "label": "L1 Activities",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-four",
+                  "label": " L1 Logs Old",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-five",
+                  "label": "L1 Individual EOD Report",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-six",
+                  "label": "L1 Team EOD Report",
+                  "icon": "pje1",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-seven",
+                  "label": " L1 PJP EOD Report",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-eight",
+                  "label": "L1 EOM Report",
+                  "icon": "docs",
+                  "route": "#"
+                }
+              ]
+            },
+            {
+              "id": "submenu-two",
+              "label": " L2 PJP",
+              "icon": "pj2",
+              "route": "/admin/outlet/PJP/l2pjp",
+              "subsubmenu": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Beat PJP",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "WH Beat PJP",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-three",
+                  "label": "L2 Activities",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-four",
+                  "label": "L2 Individual EOD Report",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-five",
+                  "label": "L2 Team EOD Report",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-six",
+                  "label": " L2  EOD Report",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-seven",
+                  "label": " L2 EOM Report",
+                  "icon": "docs",
+                  "route": "#"
+                }
+              ]
+            },
+            {
+              "id": "submenu-three",
+              "label": "Activity Type",
+              "icon": "docs",
+              "route": "#"
+            }
+          ]
+        },
+        {
+          "id": "menu-fifth",
+          "label": "Settings",
+          "icon": "dashboard",
+          "route": "#",
+          "subMenus": [
+            {
+              "id": "submenu-one",
+              "label": "User",
+              "icon": "dashboard",
+              "route": "/admin/outlet/settings/users",
+              "subsubmenu": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Sale Team Members",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "RSM",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-three",
+                  "label": "ASM",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-four",
+                  "label": "DSO",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-five",
+                  "label": "BO",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-six",
+                  "label": "Role",
+                  "icon": "docs",
+                  "route": "#"
+                }
+              ]
+            },
+            {
+              "id": "submenu-two",
+              "label": "Organization",
+              "icon": "dashboard",
+              "route": "/admin/outlet/settings/organizaton",
+              "subsubmenu": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Sale Route Planner",
+                  "icon": "saleroute",
+                  "route": "#",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Zone",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Warehouse Region",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "submenu-three",
+                      "label": "Warehouse Area",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "submenu-four",
+                      "label": "Distributor Beat",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "submenu-five",
+                      "label": "WH Beat",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "submenu-six",
+                      "label": "Assign WH Beat to BO",
+                      "icon": "assign",
+                      "route": "#"
+                    },
+                    {
+                      "id": "submenu-six",
+                      "label": "Assign Area (Divison Wise)",
+                      "icon": "dashboard",
+                      "route": "#"
+                    }
+                  ]
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Delivery Route Planner",
+                  "icon": "route",
+                  "route": "#",
+                  "subsubsubmenu": [
+                    {
+                      "id": "subsubmenu-one",
+                      "label": "Delivery Routes",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "subsubmenu-two",
+                      "label": "Assign Distributor to BQ",
+                      "icon": "docs",
+                      "route": "#"
+                    },
+                    {
+                      "id": "submenu-three",
+                      "label": "Target vs Ach",
+                      "icon": "dashboard",
+                      "route": "#"
+                    }
+                  ]
+                },
+                {
+                  "id": "submenu-three",
+                  "label": " Godown",
+                  "icon": "godwon",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-four",
+                  "label": "WareHouse",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-five",
+                  "label": "BO",
+                  "icon": "docs",
+                  "route": "#"
+                },
+                {
+                  "id": "submenu-six",
+                  "label": "Outlet",
+                  "icon": "docs",
+                  "route": "#"
+                }
+              ]
+            },
+            {
+              "id": "submenu-three",
+              "label": "Zero Order Reason",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-four",
+              "label": "Not delevierd Reason",
+              "icon": "docs",
+              "route": "#"
+            },
+            {
+              "id": "submenu-fifth",
+              "label": "Vactation",
+              "icon": "docs",
+              "route": "#"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "download",
@@ -1802,44 +3604,46 @@
           "label": "Download",
           "icon": "download",
           "route": "#",
-           "subMenus":[
+          "subMenus": [
             {
               "id": "submenu-one",
               "label": "Download-history",
               "icon": "downloadhistory",
               "route": "/admin/download/downloadmanager/downloadhistory"
             },
-             {
+            {
               "id": "submenu-two",
               "label": "User",
               "icon": "users",
               "route": "/admin/download/downloadmanager/user",
-              "subsubmenu":[
-                  {
-          "id": "subsubmenu-one",
-          "label": "Download User List",
-          "icon": "userlist",
-          "route": "/admin/download/downloadmanager/user/userlist"
-        },
-          {
-          "id": "subsubmenu-two",
-          "label": "Role",
-          "icon": "role",
-          "route": "/admin/download/downloadmanager/user/rolelist"
-        },  {
-          "id": "subsubmenu-three",
-          "label": "TL",
-          "icon": "docs",
-          "route": "/admin/download/downloadmanager/user/addTl"
-        },{
-          "id": "subsubmenu-four",
-          "label": "Executive",
-          "icon": "docs",
-          "route": "/admin/download/downloadmanager/user/excutive"
-        }
+              "subsubmenu": [
+                {
+                  "id": "subsubmenu-one",
+                  "label": "Download User List",
+                  "icon": "userlist",
+                  "route": "/admin/download/downloadmanager/user/userlist"
+                },
+                {
+                  "id": "subsubmenu-two",
+                  "label": "Role",
+                  "icon": "role",
+                  "route": "/admin/download/downloadmanager/user/rolelist"
+                },
+                {
+                  "id": "subsubmenu-three",
+                  "label": "TL",
+                  "icon": "docs",
+                  "route": "/admin/download/downloadmanager/user/addTl"
+                },
+                {
+                  "id": "subsubmenu-four",
+                  "label": "Executive",
+                  "icon": "docs",
+                  "route": "/admin/download/downloadmanager/user/excutive"
+                }
               ]
             },
-             {
+            {
               "id": "submenu-three",
               "label": "Download-Setting",
               "icon": "downloadsettings",

@@ -16,6 +16,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../../components/ui/select";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Payment_Gateway = () => {
   const logoRef = useRef(null);
@@ -182,3 +184,22 @@ export const Payment_Gateway = () => {
     </>
   );
 };
+export const Payment_Gateway_list=()=>{
+   const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
+}

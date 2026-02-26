@@ -1,3 +1,4 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../components/ui/Button";
 import {
   Card,
@@ -15,10 +16,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../../components/ui/select";
-export const Purchase_account=()=>{
-    return (
-        <>
-             <div className="min-h-full py-6">
+import { DataTable } from "../../../../utils/datatable";
+export const Purchase_account = () => {
+  return (
+    <>
+      <div className="min-h-full py-6">
         <form>
           <Card className="max-w-4xl rounded-none mx-auto border border-none shadow-none">
             <CardContent>
@@ -129,7 +131,26 @@ export const Purchase_account=()=>{
             </CardFooter>
           </Card>
         </form>
-      </div>  
-        </>
-    )
+      </div>
+    </>
+  );
+};
+export const Purchase_account_list=()=>{
+   const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
 }

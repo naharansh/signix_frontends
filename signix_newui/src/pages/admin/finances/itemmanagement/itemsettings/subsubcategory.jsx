@@ -6,6 +6,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { Alignment, Bold, ClassicEditor, Essentials, Italic, Paragraph } from "ckeditor5";
 import { Button } from"../../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
 
 
 export const Sub_Sub_Category=()=>{
@@ -295,4 +297,23 @@ export const Sub_Sub_Category=()=>{
       </div>
         </>
     )
+}
+export const Sub_Sub_Category_list=()=>{
+  const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
 }

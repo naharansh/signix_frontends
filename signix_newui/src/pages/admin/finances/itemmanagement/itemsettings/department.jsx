@@ -1,23 +1,35 @@
 import { useState } from "react";
 import { Button } from "../../../../../components/ui/Button";
-import { Card, CardContent, CardFooter } from "../../../../../components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+} from "../../../../../components/ui/card";
 import { Input } from "../../../../../components/ui/input";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../../../components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../../../../components/ui/table";
+import { createColumnHelper } from "@tanstack/react-table";
+import {DataTable} from '../../../../../utils/datatable.jsx'
+export const Department = () => {
+  const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
 
-export const Department=()=>{
-      const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
-    
-      const addRow = (e) => {
-        e.preventDefault();
-        setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
-      };
-    
-      const removeRow = (id) => {
-        setRows(rows.filter((row) => row.id !== id));
-      };
-    return(
-        <>
-            <div className="min-h-screen  p-6">
+  const addRow = (e) => {
+    e.preventDefault();
+    setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
+  };
+
+  const removeRow = (id) => {
+    setRows(rows.filter((row) => row.id !== id));
+  };
+  return (
+    <>
+      <div className="min-h-screen  p-6">
         <form>
           <Card className="max-w-4xl rounded-none mx-auto border border-none shadow-none">
             <CardContent>
@@ -32,12 +44,12 @@ export const Department=()=>{
                         cDt
                       </TableHead>
                       <TableHead className="border px-3 py-2 text-center">
-                        Department 
+                        Department
                       </TableHead>
-                       <TableHead className="border px-3 py-2 text-center">
+                      <TableHead className="border px-3 py-2 text-center">
                         Category *
                       </TableHead>
-                       <TableHead className="border px-3 py-2 text-center">
+                      <TableHead className="border px-3 py-2 text-center">
                         CategoryID
                       </TableHead>
                       <TableHead className="border px-3 py-2 text-left">
@@ -60,13 +72,13 @@ export const Department=()=>{
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
@@ -107,6 +119,25 @@ export const Department=()=>{
           </Card>
         </form>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
+export const Departmet_list = () => {
+  const data = [];
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+     <DataTable data={data} columns={column}/>
+    </>
+  );
+};

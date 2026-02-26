@@ -234,3 +234,23 @@ export const Cash_free_Transactions=()=>{
     </>
     )
 }
+export const Cash_free_transactions_list = () => {
+   const data = [];
+          // const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable columns={column} data={data} />
+            </>
+          );
+}

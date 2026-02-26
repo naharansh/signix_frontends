@@ -36,6 +36,8 @@ import {
   DialogTrigger,
 } from "../../../../../components/ui/dialog";
 import axios from "axios";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
 
 export const Add_Item = () => {
   const logoRef = useRef(null);
@@ -891,3 +893,22 @@ const [selected,setSeclected]=useState('')
     </>
   );
 };
+export const Item_List=()=>{
+  const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+              <DataTable columns={column} data={data} />
+            </>
+          );
+}

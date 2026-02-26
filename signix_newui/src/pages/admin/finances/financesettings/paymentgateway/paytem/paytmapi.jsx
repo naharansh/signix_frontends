@@ -10,6 +10,7 @@ import {
 import { Input } from "../../../.../../../../../components/ui/input";
 import { Label } from "../../../.../../../../../components/ui/label";
 import { useState } from "react";
+import { createColumnHelper } from "@tanstack/react-table";
 export const Paytm_Api = () => {
   const logoRef = useRef(null);
   const photoRef = useRef(null);
@@ -191,3 +192,21 @@ export const Paytm_Api = () => {
     </>
   );
 };
+export const Paytm_Api_list= () => {
+  const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable columns={column} data={data} />
+            </>
+          );
+}

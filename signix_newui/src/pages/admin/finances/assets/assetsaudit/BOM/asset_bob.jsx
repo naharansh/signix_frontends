@@ -11,6 +11,8 @@ import {
   TableHeader,
   TableRow,
 } from "../../../../../../components/ui/table";
+import { DataTable } from "../../../../../../utils/datatable";
+import { createColumnHelper } from "@tanstack/react-table";
 
 export default function AddBOM() {
   const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
@@ -108,4 +110,15 @@ export default function AddBOM() {
       </form>
     </div>
   );
+}
+export const Asset_bob = () => {
+  const data=[]
+  const columnhelper = createColumnHelper()
+  const columns=[
+    columnhelper.accessor("sno",{
+      header:"S.no",})
+    ]
+  return (
+    <DataTable data={data} columns={columns}/>
+  )
 }

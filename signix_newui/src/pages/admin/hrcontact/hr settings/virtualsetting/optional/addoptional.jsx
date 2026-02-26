@@ -14,20 +14,22 @@ import {
   TableRow,
 } from "../../../../../../components/ui/table";
 import { Input } from "../../../../../../components/ui/input";
-export const Add_optional=()=>{
-        const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
-        
-          const addRow = (e) => {
-            e.preventDefault();
-            setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
-          };
-        
-          const removeRow = (id) => {
-            setRows(rows.filter((row) => row.id !== id));
-          };
-    return (
-        <>
-        <div className="min-h-screen  p-2">
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../../utils/datatable";
+export const Add_optional = () => {
+  const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
+
+  const addRow = (e) => {
+    e.preventDefault();
+    setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
+  };
+
+  const removeRow = (id) => {
+    setRows(rows.filter((row) => row.id !== id));
+  };
+  return (
+    <>
+      <div className="min-h-screen  p-2">
         <form>
           <Card className="max-w-7xl rounded-none mx-auto border border-none shadow-none">
             <CardContent>
@@ -39,28 +41,28 @@ export const Add_optional=()=>{
                         S.no
                       </TableHead>
                       <TableHead className="border px-3 py-2 text-left">
-                       Ledger ID
+                        Ledger ID
                       </TableHead>
                       <TableHead className="border px-3 py-2 text-left">
-                       Ledger Name
+                        Ledger Name
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
-                        	Ledger Group
+                      <TableHead className="border px-3 py-2 text-left">
+                        Ledger Group
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
+                      <TableHead className="border px-3 py-2 text-left">
                         Ledger Group ID
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
-                       Virtual Office Location * 
+                      <TableHead className="border px-3 py-2 text-left">
+                        Virtual Office Location *
                       </TableHead>
-                       <TableHead className="border px-3 py-2 text-left">
-                     Virtual Office LocationID
+                      <TableHead className="border px-3 py-2 text-left">
+                        Virtual Office LocationID
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
-                       Virtual Office 
+                      <TableHead className="border px-3 py-2 text-left">
+                        Virtual Office
                       </TableHead>
-                       <TableHead className="border px-3 py-2 text-left">
-                    Virtual OfficeID
+                      <TableHead className="border px-3 py-2 text-left">
+                        Virtual OfficeID
                       </TableHead>
 
                       <TableHead className="border px-3 py-2 text-left">
@@ -83,37 +85,37 @@ export const Add_optional=()=>{
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                           <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
@@ -154,6 +156,26 @@ export const Add_optional=()=>{
           </Card>
         </form>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
+export const Optionals = () => {
+  const data=[]
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
+    </>
+  );
+};
+  

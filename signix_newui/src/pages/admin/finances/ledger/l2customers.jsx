@@ -4,6 +4,8 @@ import { Label } from "../../../../components/ui/label";
 import { Input } from "../../../../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../../components/ui/select";
 import { Button } from "../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 
 export const L2_Customers = () => {
     const logoRef = useRef(null);
@@ -389,3 +391,22 @@ export const L2_Customers = () => {
     </>
   );
 };
+export const L2_Customers_list=()=>{
+   const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
+}

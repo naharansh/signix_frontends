@@ -3,34 +3,50 @@ import { Button } from "../../../../components/ui/Button";
 import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../../components/ui/select";
-import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../../../../components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../../components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../../../components/ui/table";
 import { Textarea } from "../../../../components/ui/textarea";
+import { DataTable } from "../../../../utils/datatable";
+import { createColumnHelper } from "@tanstack/react-table";
 
-export const Purchase_Return=()=>{
-      const [items, setItems] = useState([
-        { id: 1, name: "", qty: 1, rate: 0, tax: 18 },
-      ]);
-      const addItem = () => {
-        setItems([
-          ...items,
-          { id: Date.now(), name: "", qty: 1, rate: 0, tax: 18 },
-        ]);
-      };
-    
-      const updateItem = (id, field, value) => {
-        setItems(items.map((i) => (i.id === id ? { ...i, [field]: value } : i)));
-      };
-    
-      const subtotal = items.reduce((s, i) => s + i.qty * i.rate, 0);
-      const taxAmount = items.reduce(
-        (s, i) => s + (i.qty * i.rate * i.tax) / 100,
-        0,
-      );
-      const total = subtotal + taxAmount;
-    return (
-        <>
-               <div className="min-h-screen  py-3">
+export const Purchase_Return = () => {
+  const [items, setItems] = useState([
+    { id: 1, name: "", qty: 1, rate: 0, tax: 18 },
+  ]);
+  const addItem = () => {
+    setItems([
+      ...items,
+      { id: Date.now(), name: "", qty: 1, rate: 0, tax: 18 },
+    ]);
+  };
+
+  const updateItem = (id, field, value) => {
+    setItems(items.map((i) => (i.id === id ? { ...i, [field]: value } : i)));
+  };
+
+  const subtotal = items.reduce((s, i) => s + i.qty * i.rate, 0);
+  const taxAmount = items.reduce(
+    (s, i) => s + (i.qty * i.rate * i.tax) / 100,
+    0,
+  );
+  const total = subtotal + taxAmount;
+  return (
+    <>
+      <div className="min-h-screen  py-3">
         <Card className="shadow-none rounded-none mx-5 border border-gray-200">
           <CardContent>
             <div className="grid grid-cols-4 mb-5">
@@ -98,9 +114,9 @@ export const Purchase_Return=()=>{
                     Voucher Date
                   </TableHead>
                   <TableHead className="border border-gray-300 font-semibold text-center">
-                   type
+                    type
                   </TableHead>
-               
+
                   <TableHead className="border border-gray-300 font-semibold text-center">
                     Tax Inclusion
                   </TableHead>
@@ -125,7 +141,7 @@ export const Purchase_Return=()=>{
                       className="w-full  px-1 py-1"
                     />
                   </TableCell>
-                
+
                   <TableCell className="border border-gray-300 text-center">
                     <Input
                       type="text"
@@ -136,7 +152,6 @@ export const Purchase_Return=()=>{
                 </TableRow>
               </TableBody>
             </Table>
-         
           </CardContent>
         </Card>
         <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
@@ -148,7 +163,7 @@ export const Purchase_Return=()=>{
                     {[
                       "S.no",
                       "Item Name",
-                      
+
                       "MRP",
                       "Qty",
                       "Unit*",
@@ -259,7 +274,7 @@ export const Purchase_Return=()=>{
                       "Tax (%)",
                       "Dis. (%)",
                       "Amt.(INR)",
-                    
+
                       "Short Narration",
 
                       "Action",
@@ -363,7 +378,7 @@ export const Purchase_Return=()=>{
                       "Tax (%)",
                       "Dis. (%)",
                       "Amt.(INR)",
-                      
+
                       "Short Narration",
 
                       "Action",
@@ -593,33 +608,33 @@ export const Purchase_Return=()=>{
           </CardFooter>
         </Card>
       </div>
-        </>
-    )
-}
-export const  Purchase_Return_with_Item=()=>{
-        const [items, setItems] = useState([
-        { id: 1, name: "", qty: 1, rate: 0, tax: 18 },
-      ]);
-      const addItem = () => {
-        setItems([
-          ...items,
-          { id: Date.now(), name: "", qty: 1, rate: 0, tax: 18 },
-        ]);
-      };
-    
-      const updateItem = (id, field, value) => {
-        setItems(items.map((i) => (i.id === id ? { ...i, [field]: value } : i)));
-      };
-    
-      const subtotal = items.reduce((s, i) => s + i.qty * i.rate, 0);
-      const taxAmount = items.reduce(
-        (s, i) => s + (i.qty * i.rate * i.tax) / 100,
-        0,
-      );
-      const total = subtotal + taxAmount;
-    return (
-        <>
-               <div className="min-h-screen  py-3">
+    </>
+  );
+};
+export const Purchase_Return_with_Item = () => {
+  const [items, setItems] = useState([
+    { id: 1, name: "", qty: 1, rate: 0, tax: 18 },
+  ]);
+  const addItem = () => {
+    setItems([
+      ...items,
+      { id: Date.now(), name: "", qty: 1, rate: 0, tax: 18 },
+    ]);
+  };
+
+  const updateItem = (id, field, value) => {
+    setItems(items.map((i) => (i.id === id ? { ...i, [field]: value } : i)));
+  };
+
+  const subtotal = items.reduce((s, i) => s + i.qty * i.rate, 0);
+  const taxAmount = items.reduce(
+    (s, i) => s + (i.qty * i.rate * i.tax) / 100,
+    0,
+  );
+  const total = subtotal + taxAmount;
+  return (
+    <>
+      <div className="min-h-screen  py-3">
         <Card className="shadow-none rounded-none mx-5 border border-gray-200">
           <CardContent>
             <div className="grid grid-cols-4 mb-5">
@@ -687,9 +702,9 @@ export const  Purchase_Return_with_Item=()=>{
                     Voucher Date
                   </TableHead>
                   <TableHead className="border border-gray-300 font-semibold text-center">
-                   type
+                    type
                   </TableHead>
-               
+
                   <TableHead className="border border-gray-300 font-semibold text-center">
                     Tax Inclusion
                   </TableHead>
@@ -714,7 +729,7 @@ export const  Purchase_Return_with_Item=()=>{
                       className="w-full  px-1 py-1"
                     />
                   </TableCell>
-                
+
                   <TableCell className="border border-gray-300 text-center">
                     <Input
                       type="text"
@@ -725,7 +740,6 @@ export const  Purchase_Return_with_Item=()=>{
                 </TableRow>
               </TableBody>
             </Table>
-         
           </CardContent>
         </Card>
         <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
@@ -737,11 +751,10 @@ export const  Purchase_Return_with_Item=()=>{
                     {[
                       "S.no",
                       "Particulars",
-                      
+
                       "Cr.",
                       "Short Narration",
-                      "Action"
-                      
+                      "Action",
                     ].map((head) => (
                       <TableHead
                         key={head}
@@ -795,10 +808,7 @@ export const  Purchase_Return_with_Item=()=>{
                           }
                         />
                       </TableCell>
-                      <TableCell className="border border-gray-300 px-3 py-2">
-                       
-                      </TableCell>
-                   
+                      <TableCell className="border border-gray-300 px-3 py-2"></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -812,9 +822,7 @@ export const  Purchase_Return_with_Item=()=>{
             </div>
           </CardContent>
         </Card>
-        
-       
-      
+
         <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
           <CardContent>
             <div className="w-full ">
@@ -822,7 +830,6 @@ export const  Purchase_Return_with_Item=()=>{
               <Textarea className="rounded-none my-2 h-30 resize-vertical" />
             </div>
             <Button>Terms and Condition</Button>
-            
           </CardContent>
           <CardFooter className="mt-auto">
             <div className="flex justify-end gap-2 w-full">
@@ -832,6 +839,25 @@ export const  Purchase_Return_with_Item=()=>{
           </CardFooter>
         </Card>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
+export const Purchase_Return_List = () => {
+  const data = [];
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
+    </>
+  );
+};

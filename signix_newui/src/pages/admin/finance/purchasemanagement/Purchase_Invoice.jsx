@@ -6,6 +6,8 @@ import { Label } from "../../../../components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../../components/ui/select";
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../../../../components/ui/table";
 import { Textarea } from "../../../../components/ui/textarea";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Purchase_Invoice=()=>{
       const [items, setItems] = useState([
@@ -540,4 +542,23 @@ export const Purchase_Invoice=()=>{
       </div>
         </>
     )
+}
+export const Purchase_Invoices_list=()=>{
+  const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
 }

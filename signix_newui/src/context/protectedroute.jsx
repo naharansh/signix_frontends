@@ -6,16 +6,16 @@ export const Protected_Routes = () => {
 
     const [isAuth, setIsAuth] = useState(true);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        axios.get("http://localhost:8080/api/check-auth", {
-            withCredentials: true
-        })
-        .then(() => {console.log(isAuth)
-            setIsAuth(true)})
-        .catch(() => setIsAuth(false));
+    //     axios.get("http://localhost:8080/api/check-auth", {
+    //         withCredentials: true
+    //     })
+    //     .then(() => {console.log(isAuth)
+    //         setIsAuth(true)})
+    //     .catch(() => setIsAuth(false));
 
-    }, []);
+    // }, []);
 
     if (isAuth === null) {
         return <div>Loading...</div>;

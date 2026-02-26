@@ -14,20 +14,22 @@ import {
   TableRow,
 } from "../../../../../../components/ui/table";
 import { Input } from "../../../../../../components/ui/input";
-export const Admin_Office=()=>{
-      const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
-    
-      const addRow = (e) => {
-        e.preventDefault();
-        setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
-      };
-    
-      const removeRow = (id) => {
-        setRows(rows.filter((row) => row.id !== id));
-      };
-    return (
-        <>
-         <div className="min-h-screen  p-2">
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../../utils/datatable";
+export const Admin_Office = () => {
+  const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
+
+  const addRow = (e) => {
+    e.preventDefault();
+    setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
+  };
+
+  const removeRow = (id) => {
+    setRows(rows.filter((row) => row.id !== id));
+  };
+  return (
+    <>
+      <div className="min-h-screen  p-2">
         <form>
           <Card className="max-w-7xl rounded-none mx-auto border border-none shadow-none">
             <CardContent>
@@ -44,16 +46,16 @@ export const Admin_Office=()=>{
                       <TableHead className="border px-3 py-2 text-left">
                         EmpID *
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
+                      <TableHead className="border px-3 py-2 text-left">
                         Employee
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
+                      <TableHead className="border px-3 py-2 text-left">
                         Designation
                       </TableHead>
-                         <TableHead className="border px-3 py-2 text-left">
-                        Virtual Office 
+                      <TableHead className="border px-3 py-2 text-left">
+                        Virtual Office
                       </TableHead>
-                       <TableHead className="border px-3 py-2 text-left">
+                      <TableHead className="border px-3 py-2 text-left">
                         Virtual OfficeID
                       </TableHead>
 
@@ -77,25 +79,25 @@ export const Admin_Office=()=>{
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-                            <TableCell className="border px-3 py-2">
+                        <TableCell className="border px-3 py-2">
                           <Input
                             type="text"
                             className="w-full border rounded px-2 py-1 text-sm"
@@ -136,6 +138,25 @@ export const Admin_Office=()=>{
           </Card>
         </form>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
+export const Admin_list = () => {
+  const data=[]
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
+    </>
+  );
+};

@@ -16,11 +16,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../../components/ui/select";
+import { DataTable } from "../../../../utils/datatable";
+import { createColumnHelper } from "@tanstack/react-table";
 
 export const Sundry_debtorsss = () => {
   const logoRef = useRef(null);
   const photoRef = useRef(null);
-
   const [logoName, setLogoName] = useState("");
   const [photoName, setPhotoName] = useState("");
   return (
@@ -525,3 +526,22 @@ export const Sundry_debtorsss = () => {
     </>
   );
 };
+export const Sundry_debtorsss_list=()=>{
+   const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
+}

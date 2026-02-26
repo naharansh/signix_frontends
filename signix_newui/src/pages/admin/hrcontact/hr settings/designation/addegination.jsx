@@ -14,6 +14,8 @@ import {
 } from "../../../../../components/ui/table";
 import { Input } from "../../../../../components/ui/input";
 import { Button } from "../../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
 export const Add_Designation = () => {
   const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
 
@@ -127,3 +129,22 @@ export const Add_Designation = () => {
     </>
   );
 };
+ export const Designation=()=>{
+  const data=[]
+   const columnhelper = createColumnHelper();
+                  const column = [
+                    columnhelper.accessor("sno", {
+                      header: "S.no",
+                      cell: (info) => info.getValue(),
+                    }),
+                    columnhelper.accessor("contactgroup", {
+                      header: "Contact Group",
+                      cell: (info) => info.getValue(),
+                    }),
+                  ];
+                  return (
+                    <>
+                      <DataTable data={data} columns={column} />
+                    </>
+                  );
+ }

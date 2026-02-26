@@ -16,10 +16,10 @@ function App() {
 
       <Routes>
 
-        {/* Public routes */}
+      
         <Route path="/*" element={<AppRoutes />} />
 
-        {/* Admin routes */}
+      
         <Route path="/admin/*" element={<AdminRoutes />} />
 
       </Routes>

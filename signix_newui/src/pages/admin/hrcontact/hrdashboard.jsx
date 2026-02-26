@@ -18,10 +18,9 @@ export const Employee_Records = () => {
 
   return (
     <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
-     {submenu?.filter(menu => !menu.hidden).length > 0 ? (
+     {submenu.length > 0 ? (
   submenu
-    ?.filter(menu => !menu.hidden)
-    .map((menu) => {
+    ?.map((menu) => {
       const Icon = Employee_records[menu.icon];
 
       return (

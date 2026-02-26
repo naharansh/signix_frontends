@@ -218,6 +218,24 @@ export const Hold_logs = () => {
     </>
   );
 };
+export const Hold_logs_list=()=>{
+  const columnhelper = createColumnHelper();
+            const column = [
+              columnhelper.accessor("sno", {
+                header: "S.no",
+                cell: (info) => info.getValue(),
+              }),
+              columnhelper.accessor("contactgroup", {
+                header: "Contact Group",
+                cell: (info) => info.getValue(),
+              }),
+            ];
+            return (
+              <>
+                <DataTable columns={column} data={data} />
+              </>
+            )
+}
 export const Transaction_logs=()=>{
     return (
         <>
@@ -398,4 +416,22 @@ export const Transaction_logs=()=>{
       </div>
         </>
     )
+}
+export const Transaction_logs_list=()=>{
+  const columnhelper = createColumnHelper();
+            const column = [
+              columnhelper.accessor("sno", {
+                header: "S.no",
+                cell: (info) => info.getValue(),
+              }),
+              columnhelper.accessor("contactgroup", {
+                header: "Contact Group",
+                cell: (info) => info.getValue(),
+              }),
+            ];
+            return (
+              <>
+                <DataTable columns={column} data={data} />
+              </>
+            )
 }

@@ -14,21 +14,23 @@ import {
 } from "../../../../../components/ui/table";
 import { Button } from "../../../../../components/ui/Button";
 import { Input } from "../../../../../components/ui/input";
-export const Add_Profile=()=>{
-     const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
-    
-      const addRow = (e) => {
-        e.preventDefault();
-        setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
-      };
-    
-      const removeRow = (id) => {
-        setRows(rows.filter((row) => row.id !== id));
-      };
-    
-    return (
-        <>
-          <div className="min-h-screen  p-2">
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
+export const Add_Profile = () => {
+  const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
+
+  const addRow = (e) => {
+    e.preventDefault();
+    setRows([...rows, { id: Date.now(), bom: "", bomCode: "" }]);
+  };
+
+  const removeRow = (id) => {
+    setRows(rows.filter((row) => row.id !== id));
+  };
+
+  return (
+    <>
+      <div className="min-h-screen  p-2">
         <form>
           <Card className="max-w-7xl rounded-none mx-auto border border-none shadow-none">
             <CardContent>
@@ -45,7 +47,7 @@ export const Add_Profile=()=>{
                       <TableHead className="border px-3 py-2 text-left">
                         Profile
                       </TableHead>
-               
+
                       <TableHead className="border px-3 py-2 text-left">
                         Actions
                       </TableHead>
@@ -71,8 +73,6 @@ export const Add_Profile=()=>{
                             className="w-full border rounded px-2 py-1 text-sm"
                           />
                         </TableCell>
-
-                      
 
                         <TableCell className="border px-3 py-2 text-center">
                           <Button
@@ -108,6 +108,25 @@ export const Add_Profile=()=>{
           </Card>
         </form>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
+export const Profile_list = () => {
+  const columnhelper = createColumnHelper();
+  const data=[]
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
+    </>
+  );
+};

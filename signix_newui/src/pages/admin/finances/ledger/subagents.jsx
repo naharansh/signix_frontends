@@ -1,16 +1,30 @@
 import { useRef, useState } from "react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../../../../components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../../components/ui/card";
 import { Label } from "../../../../components/ui/label";
 import { Input } from "../../../../components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../../components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../../components/ui/select";
 import { Button } from "../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Subagents = () => {
-    const logoRef = useRef(null);
-      const photoRef = useRef(null);
-    
-      const [logoName, setLogoName] = useState("");
-      const [photoName, setPhotoName] = useState("");
+  const logoRef = useRef(null);
+  const photoRef = useRef(null);
+
+  const [logoName, setLogoName] = useState("");
+  const [photoName, setPhotoName] = useState("");
   return (
     <>
       <div className="min-h-full py-6">
@@ -21,7 +35,7 @@ export const Subagents = () => {
                 <CardHeader className="p-0 px-2  text-gray-500">
                   <CardTitle className="m-0">LEDGER DETAILS</CardTitle>
                 </CardHeader>
-                 <div className="grid grid-cols-12 gap-4 items-center my-3 px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3 px-4">
                   <Label className="col-span-3">Create Dt</Label>
                   <Input
                     type="text"
@@ -76,7 +90,7 @@ export const Subagents = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                   <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Generic Name</Label>
                   <Input
                     type="text"
@@ -103,7 +117,7 @@ export const Subagents = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                     <div className="grid grid-cols-12 gap-4 items-center my-3 px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3 px-4">
                   <Label className="col-span-3">WhatsApp</Label>
                   <Input
                     type="text"
@@ -140,9 +154,6 @@ export const Subagents = () => {
                     </div>
                   </div>
                 </div>
-               
-
-             
               </div>
             </CardContent>
           </Card>
@@ -172,14 +183,14 @@ export const Subagents = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                   <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Location</Label>
                   <Input
                     type="text"
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                   <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Location Id</Label>
                   <Input
                     type="text"
@@ -193,7 +204,7 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                    <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">City Id</Label>
                   <Input
                     type="text"
@@ -207,7 +218,7 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                   <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">State id</Label>
                   <Select>
                     <SelectTrigger className="col-span-9 border rounded-none px-3 py-2  outline-none w-full">
@@ -240,7 +251,7 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                   <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Country Id</Label>
                   <Input
                     type="text"
@@ -258,7 +269,7 @@ export const Subagents = () => {
                     className="col-span-4 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                  <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Address Type </Label>
                   <Input
                     type="text"
@@ -301,8 +312,7 @@ export const Subagents = () => {
                     </SelectContent>
                   </Select>
                 </div>
-            
-            
+
                 <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Email </Label>
                   <Input
@@ -310,7 +320,7 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                  <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">Ph (O)</Label>
                   <Select>
                     <SelectTrigger className="col-span-9 border rounded-none px-3 py-2  outline-none w-full">
@@ -323,8 +333,7 @@ export const Subagents = () => {
                     </SelectContent>
                   </Select>
                 </div>
-            
-            
+
                 <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">DOB</Label>
                   <Input
@@ -332,14 +341,13 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-                    <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
+                <div className="grid grid-cols-12 gap-4 items-center my-3  px-4">
                   <Label className="col-span-3">DOA</Label>
                   <Input
                     type="text"
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-             
               </div>
             </CardContent>
           </Card>
@@ -406,11 +414,8 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-             
-               
               </div>
             </CardContent>
-             
           </Card>
           <Card className="max-w-4xl border-none mx-auto shadow-none">
             <CardContent>
@@ -425,7 +430,6 @@ export const Subagents = () => {
                     className="col-span-9 border rounded-none px-3 py-2  outline-none"
                   />
                 </div>
-               
               </div>
             </CardContent>
           </Card>
@@ -485,17 +489,34 @@ export const Subagents = () => {
                 </div>
               </div>
             </CardContent>
-              <CardFooter className="mt-auto">
+            <CardFooter className="mt-auto">
               <div className="flex justify-end gap-2 w-full">
                 <Button variant="outline">Cancel</Button>
                 <Button>Save</Button>
               </div>
             </CardFooter>
           </Card>
-          
-         
         </form>
       </div>
     </>
   );
 };
+export const Subagents_list=()=>{
+   const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
+}

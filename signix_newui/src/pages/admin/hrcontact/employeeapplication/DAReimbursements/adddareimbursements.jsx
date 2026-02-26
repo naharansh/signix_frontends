@@ -3,6 +3,8 @@ import { Button } from "../../../../../components/ui/Button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../../../../../components/ui/card"
 import { Input } from "../../../../../components/ui/input"
 import { Label } from "../../../../../components/ui/label"
+import { createColumnHelper } from "@tanstack/react-table"
+import { DataTable } from "../../../../../utils/datatable"
 
 export const Add_Reimbursements=()=>{
     const logoRef = useRef(null);
@@ -219,4 +221,22 @@ export const Add_Reimbursements=()=>{
       </div>
         </>
     )
+}
+export const Reimbursements=()=>{ 
+   const columnhelper = createColumnHelper();
+                  const column = [
+                    columnhelper.accessor("sno", {
+                      header: "S.no",
+                      cell: (info) => info.getValue(),
+                    }),
+                    columnhelper.accessor("contactgroup", {
+                      header: "Contact Group",
+                      cell: (info) => info.getValue(),
+                    }),
+                  ];
+                  return (
+                    <>
+                      <DataTable data={data} columns={column} />
+                    </>
+                  );
 }

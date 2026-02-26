@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "../../components/ui/card";
 import data from "../../utils/data.json";
 import { gst_docks, proposedDashbaord, Purchase_Vias_PO } from "../../utils/iconmap";
@@ -6,6 +7,7 @@ const getFinanceMenu = () => {
 };
 export const Sale_Management = () => {
   const financeMenu = getFinanceMenu();
+  const navigate=useNavigate() 
   if (!financeMenu) return;
 
   // 👇 YOU MISSED THIS STEP
@@ -32,6 +34,7 @@ export const Sale_Management = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -49,6 +52,7 @@ export const Sale_Management = () => {
 };
 export const Purchase_Management = () => {
   const financeMenu = getFinanceMenu();
+  const navigate=useNavigate()
   if (!financeMenu) {
     return;
   }
@@ -82,6 +86,7 @@ export const Purchase_Management = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -118,7 +123,7 @@ export const Receipt_Management = () => {
   for (const items of submenu) {
     receipt_management.push(items);
   }
-
+const navigate=useNavigate()
   return (
     <>
       <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -130,6 +135,7 @@ export const Receipt_Management = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -154,7 +160,7 @@ export const Payment_Management = () => {
   if (!recordOne) {
     return;
   }
-
+const navigate=useNavigate()
   const subMenus = recordOne.subMenus.find(
     (m) => m.id === "submenu-fourth",
   ).subsubmeus;
@@ -178,6 +184,7 @@ export const Payment_Management = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -210,7 +217,7 @@ export const Contra_Management = () => {
   for (const items of submenus) {
     contra_management.push(items);
   }
-
+const navigate=useNavigate()
   return (
     <>
       <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -222,6 +229,7 @@ export const Contra_Management = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -302,6 +310,7 @@ export const Receipt_Note =()=>{
   for (const items of submenuOne) {
     material.push(items);
   }
+  const navigate=useNavigate()
   return (
     <>
       <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -313,6 +322,7 @@ export const Receipt_Note =()=>{
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                 onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -348,6 +358,7 @@ export const Material_In = () => {
   for (const items of submenuOne) {
     material.push(items);
   }
+  const navigate=useNavigate()
 
 
   return (
@@ -361,6 +372,7 @@ export const Material_In = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -395,7 +407,7 @@ export const Material_Out = () => {
   for (const items of submenuOne) {
     material.push(items);
   }
-
+const navigate=useNavigate()
   return (
     <>
       <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -407,6 +419,7 @@ export const Material_Out = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -443,7 +456,7 @@ export const Proposals = () => {
   for (const payment of subMenus) {
     proposals.push(payment);
   }
-
+ const navigate=useNavigate() 
   return (
     <>
       <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -455,6 +468,7 @@ export const Proposals = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>navigate(`${menu.route}`)}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -473,7 +487,7 @@ export const Proposals = () => {
 export const Production = () => {
     const financeMenu = getFinanceMenu();
   if (!financeMenu) return;
-
+  const navigate=useNavigate()
 
   const recordOne = financeMenu.menus.find((m) => m.id === "record-one");
   if (!recordOne) return;
@@ -498,6 +512,7 @@ export const Production = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>navigate(`${menu.route}`)}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -515,7 +530,7 @@ export const Production = () => {
 export const Purchase_Via_PO = () => {
     const financeMenu = getFinanceMenu();
   if (!financeMenu) return;
-
+ const navigate=useNavigate() 
 
   const recordOne = financeMenu.menus.find((m) => m.id === "record-one");
   if (!recordOne) return;
@@ -541,6 +556,7 @@ export const Purchase_Via_PO = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />

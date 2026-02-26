@@ -87,6 +87,22 @@ import downloadsettings from '../assets/icons/downloadsettings.png'
 import users from '../assets/icons/users.png'
 import role from '../assets/icons/role.png'
 import userlist from '../assets/icons/userlist.png'
+import pj1 from '../assets/icons/l1pjp.png'
+import pj2 from '../assets/icons/l2pjp.png'
+import pjonee from '../assets/icons/pjonee.png'
+import godwon from '../assets/icons/godwon.png'
+import route from '../assets/icons/route.png'
+import saleroute from '../assets/icons/saleroute.png'
+import assign from '../assets/icons/assign.png'
+import unit from '../assets/icons/unit_managemnt.png'
+import my from '../assets/icons/MyTA.png'
+import team from '../assets/icons/myteam.png'
+import allhr from '../assets/icons/all.png'
+import veheicle from '../assets/icons/vechele.png'
+import applied from '../assets/icons/approved.png'
+import start from '../assets/icons/start.png'
+import declined from '../assets/icons/declined.png'
+import claimed from '../assets/icons/claimed.png'
 export const menuicons = {
     home: Home,
     hrm: Briefcase,
@@ -122,7 +138,6 @@ export const submenuicons = {
     mobileapp: mobileapp,
     hrsettings: hrsettings,
     employee_application: employee_application,
-
     smsreports: smsreports,
     Configurations: configurations,
     dashboard: dashboard,
@@ -132,10 +147,6 @@ export const submenuicons = {
     finance: finance,
     contacts: contacts,
     inventory: inventory
-
-
-
-
 }
 export const crmicons = {
     phone: phone,
@@ -293,4 +304,58 @@ export const dashboardss={
     orders:orders,
    debters:debters,
    trainnings:items
+}
+// outlet trail icons
+export const dispatch_trail={
+     dispatch:dispatch,
+     dashboard:dashboard,
+     docs:docs
+}
+export const outlet_settings={
+    dashboard:dashboard,
+    docs:docs,
+}
+export const pjp={
+    pj1:pj1,
+    pj2:pj2,
+    docs:docs,
+}
+export const pjpone={
+    docs:gst_docks,
+    pje1:pjonee,
+}
+export const organization={
+    godwon:godwon,
+    docs:docs,
+    route:route,
+    saleroute:saleroute
+}
+export const delevery_route={
+    docs:docs,
+    dashboard:dashboard,
+   
+}
+export const sales_route={
+    docs:docs,
+    dashboard:dashboard,
+    assign:assign
+}
+export const item_management={
+    docs:docs,
+    unit:unit
+}
+export const employee_applicationss={
+    my:my,
+    team:team,
+    all:allhr,
+    veheicle:veheicle
+}
+export const dashboards=dashboard
+export const Employee_recordsss={
+all:all,
+claimed:claimed,
+start:start,
+applied:applied,
+declined:declined
+
 }

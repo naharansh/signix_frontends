@@ -12,6 +12,8 @@ import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, Table
 import { Input } from '../../../../components/ui/input';
 import { Textarea } from '../../../../components/ui/textarea';
 import { Button } from '../../../../components/ui/Button';
+import { createColumnHelper } from '@tanstack/react-table';
+import { DataTable } from '../../../../utils/datatable';
 
 export const AddRecipet_note = () => {
   const [items, setItems] = useState([
@@ -551,3 +553,22 @@ export const AddRecipet_note = () => {
     </>
   );
 };
+export const Rejection_note_list=()=>{
+  const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
+}

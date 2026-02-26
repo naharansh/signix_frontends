@@ -20,6 +20,8 @@ import {
 } from "../../../../components/ui/select";
 import { Textarea } from "../../../../components/ui/textarea";
 import { Button } from "../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 export const AddSalesInvoice = () => {
   const [items, setItems] = useState([
     { id: 1, name: "", qty: 1, rate: 0, tax: 18 },
@@ -658,3 +660,22 @@ export const AddSalesInvoice = () => {
     </>
   );
 };
+export const Sales_Invoice=()=>{
+  const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
+}

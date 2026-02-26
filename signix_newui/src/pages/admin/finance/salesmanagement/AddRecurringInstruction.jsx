@@ -1,14 +1,30 @@
-import { useState } from "react"
-import { Button } from "../../../../components/ui/Button"
-import { Card, CardContent, CardFooter } from "../../../../components/ui/card"
-import { Input } from "../../../../components/ui/input"
-import { Label } from "../../../../components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../../components/ui/select"
-import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../../../../components/ui/table"
-import { Textarea } from "../../../../components/ui/textarea"
+import { useState } from "react";
+import { Button } from "../../../../components/ui/Button";
+import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
+import { Input } from "../../../../components/ui/input";
+import { Label } from "../../../../components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../../components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../../../components/ui/table";
+import { Textarea } from "../../../../components/ui/textarea";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 
-export const Add_Recurring_Instruction=()=>{
-       const [items, setItems] = useState([
+export const Add_Recurring_Instruction = () => {
+  const [items, setItems] = useState([
     { id: 1, name: "", qty: 1, rate: 0, tax: 18 },
   ]);
   const addItem = () => {
@@ -28,9 +44,9 @@ export const Add_Recurring_Instruction=()=>{
     0,
   );
   const total = subtotal + taxAmount;
-    return(
-        <>
-              <div className="min-h-screen  py-3">
+  return (
+    <>
+      <div className="min-h-screen  py-3">
         <Card className="shadow-none rounded-none mx-5 border border-gray-200">
           <CardContent>
             <div className="grid grid-cols-4 mb-5">
@@ -523,172 +539,202 @@ export const Add_Recurring_Instruction=()=>{
             </div>
           </div>
         </div>
-      <Card className="shadow-lg rounded-md mx-5 border border-gray-200 my-6 p-6 bg-white">
-  <CardContent>
-    {/* Terms Section */}
-    <div className="mb-4">
-      <Label className="block text-sm font-medium text-gray-700">Additional Notes</Label>
-      <Textarea 
-        className="rounded-md my-2 h-32 resize-vertical border border-gray-300 focus:ring-2 focus:ring-blue-500 w-full" 
-        placeholder="Enter terms and conditions here..."
-      />
-      <Button variant="link" className="text-blue-600 mt-2">View Terms & Conditions</Button>
-    </div>
-   <div className="grid grid-cols-3 gap-6 my-6">
-      {/* Payment Terms */}
-      <div>
-        <Label className="block font-semibold mb-1">Profile Name</Label>
-      <Input type="text"/>
+        <Card className="shadow-lg rounded-md mx-5 border border-gray-200 my-6 p-6 bg-white">
+          <CardContent>
+            {/* Terms Section */}
+            <div className="mb-4">
+              <Label className="block text-sm font-medium text-gray-700">
+                Additional Notes
+              </Label>
+              <Textarea
+                className="rounded-md my-2 h-32 resize-vertical border border-gray-300 focus:ring-2 focus:ring-blue-500 w-full"
+                placeholder="Enter terms and conditions here..."
+              />
+              <Button variant="link" className="text-blue-600 mt-2">
+                View Terms & Conditions
+              </Button>
+            </div>
+            <div className="grid grid-cols-3 gap-6 my-6">
+              {/* Payment Terms */}
+              <div>
+                <Label className="block font-semibold mb-1">Profile Name</Label>
+                <Input type="text" />
+              </div>
+
+              {/* Dispatch Mode */}
+              <div>
+                <Label className="block font-semibold mb-1">Repeat Every</Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Dispatch Mode" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="courier">Courier</SelectItem>
+                    <SelectItem value="pickup">Pickup</SelectItem>
+                    <SelectItem value="transport">Transport</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Delivery Mode */}
+              <div>
+                <Label className="block font-semibold mb-1">Start On</Label>
+                <Input type="date" />
+              </div>
+
+              {/* Sale Type */}
+              <div>
+                <Label className="block font-semibold mb-1">Ends On</Label>
+                <Input type="date" />
+              </div>
+              <div>
+                <Label className="block font-semibold mb-1">
+                  Payment Terms
+                </Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Payment Term" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="advance">Advance</SelectItem>
+                    <SelectItem value="net30">Net 30</SelectItem>
+                    <SelectItem value="net60">Net 60</SelectItem>
+                    <SelectItem value="onDelivery">On Delivery</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Dispatch Mode */}
+              <div>
+                <Label className="block font-semibold mb-1">
+                  Dispatch Mode
+                </Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Dispatch Mode" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="courier">Courier</SelectItem>
+                    <SelectItem value="pickup">Pickup</SelectItem>
+                    <SelectItem value="transport">Transport</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            {/* Grid Section */}
+            <div className="grid grid-cols-3 gap-6 my-6">
+              {/* Payment Terms */}
+
+              {/* Delivery Mode */}
+              <div>
+                <Label className="block font-semibold mb-1">
+                  Delivery Mode
+                </Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Delivery Mode" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="standard">Standard</SelectItem>
+                    <SelectItem value="express">Express</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Sale Type */}
+              <div>
+                <Label className="block font-semibold mb-1">Sale Type</Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Sale Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="retail">Retail</SelectItem>
+                    <SelectItem value="wholesale">Wholesale</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Sales Person */}
+              <div>
+                <Label className="block font-semibold mb-1">Sales Person</Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Sales Person" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="john">John</SelectItem>
+                    <SelectItem value="ashima">Ashima</SelectItem>
+                    <SelectItem value="rahul">Rahul</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Currency */}
+              <div>
+                <Label className="block font-semibold mb-1">Currency</Label>
+                <Select>
+                  <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
+                    <SelectValue placeholder="Select Currency" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="inr">INR</SelectItem>
+                    <SelectItem value="usd">USD</SelectItem>
+                    <SelectItem value="eur">EUR</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex items-center gap-4 my-6">
+                <Label className="font-semibold">TDS (%)</Label>
+                <Input
+                  type="number"
+                  className="w-24 border border-gray-300 rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-500"
+                  placeholder="0.00"
+                />
+              </div>
+            </div>
+
+            {/* TDS Section */}
+
+            {/* Payable Amount */}
+            <div className="text-right font-semibold text-lg text-gray-700">
+              Payable Amount: <span className="text-blue-600">₹0.00</span>
+            </div>
+          </CardContent>
+
+          {/* Footer */}
+          <CardFooter className="mt-6">
+            <div className="flex justify-end gap-3 w-full">
+              <Button variant="outline" className="px-4 py-2 border-gray-400">
+                Cancel
+              </Button>
+              <Button className="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700">
+                Save
+              </Button>
+            </div>
+          </CardFooter>
+        </Card>
       </div>
-
-      {/* Dispatch Mode */}
-      <div>
-        <Label className="block font-semibold mb-1">Repeat Every</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Dispatch Mode" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="courier">Courier</SelectItem>
-            <SelectItem value="pickup">Pickup</SelectItem>
-            <SelectItem value="transport">Transport</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Delivery Mode */}
-      <div>
-        <Label className="block font-semibold mb-1">Start On</Label>
-        <Input type="date"/>
-      </div>
-
-      {/* Sale Type */}
-           <div>
-        <Label className="block font-semibold mb-1">Ends On</Label>
-        <Input type="date"/>
-      </div>
-<div>
-        <Label className="block font-semibold mb-1">Payment Terms</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Payment Term" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="advance">Advance</SelectItem>
-            <SelectItem value="net30">Net 30</SelectItem>
-            <SelectItem value="net60">Net 60</SelectItem>
-            <SelectItem value="onDelivery">On Delivery</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Dispatch Mode */}
-      <div>
-        <Label className="block font-semibold mb-1">Dispatch Mode</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Dispatch Mode" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="courier">Courier</SelectItem>
-            <SelectItem value="pickup">Pickup</SelectItem>
-            <SelectItem value="transport">Transport</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      
-    </div>
-
-    {/* Grid Section */}
-    <div className="grid grid-cols-3 gap-6 my-6">
-      {/* Payment Terms */}
-      
-
-      {/* Delivery Mode */}
-      <div>
-        <Label className="block font-semibold mb-1">Delivery Mode</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Delivery Mode" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="standard">Standard</SelectItem>
-            <SelectItem value="express">Express</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Sale Type */}
-      <div>
-        <Label className="block font-semibold mb-1">Sale Type</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Sale Type" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="retail">Retail</SelectItem>
-            <SelectItem value="wholesale">Wholesale</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Sales Person */}
-      <div>
-        <Label className="block font-semibold mb-1">Sales Person</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Sales Person" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="john">John</SelectItem>
-            <SelectItem value="ashima">Ashima</SelectItem>
-            <SelectItem value="rahul">Rahul</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Currency */}
-      <div>
-        <Label className="block font-semibold mb-1">Currency</Label>
-        <Select>
-          <SelectTrigger className="w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500">
-            <SelectValue placeholder="Select Currency" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="inr">INR</SelectItem>
-            <SelectItem value="usd">USD</SelectItem>
-            <SelectItem value="eur">EUR</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="flex items-center gap-4 my-6">
-      <Label className="font-semibold">TDS (%)</Label>
-      <Input 
-        type="number" 
-        className="w-24 border border-gray-300 rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-500" 
-        placeholder="0.00" 
-      />
-    </div>
-    </div>
-
-    {/* TDS Section */}
-    
-
-    {/* Payable Amount */}
-    <div className="text-right font-semibold text-lg text-gray-700">
-      Payable Amount: <span className="text-blue-600">₹0.00</span>
-    </div>
-  </CardContent>
-
-  {/* Footer */}
-  <CardFooter className="mt-6">
-    <div className="flex justify-end gap-3 w-full">
-      <Button variant="outline" className="px-4 py-2 border-gray-400">Cancel</Button>
-      <Button className="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700">Save</Button>
-    </div>
-  </CardFooter>
-</Card>
-      </div>
-        </>
-    )
+    </>
+  );
+};
+export const Recurrening_Projection=()=>{
+  const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
 }

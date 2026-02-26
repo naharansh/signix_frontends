@@ -3,6 +3,8 @@ import { Card, CardContent, CardFooter } from "../../../../../components/ui/card
 import { Input } from "../../../../../components/ui/input";
 import { Label } from "../../../../../components/ui/label";
 import { Button } from "../../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
 
 export const HAS_SAC = () => {
   const logoRef = useRef(null);
@@ -108,3 +110,22 @@ export const HAS_SAC = () => {
     </>
   );
 };
+export const HAS_SAC_List=()=>{
+  const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+            <>
+            <DataTable data={data} columns={column}/>
+            </>
+          );
+}

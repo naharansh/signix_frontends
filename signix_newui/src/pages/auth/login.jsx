@@ -25,23 +25,28 @@ export const Login = () => {
     const name = e.target.name;
     const value = e.target.value;
     console.log(name, value);
+    
     setcredentials((prev) => ({ ...prev, [name]: value }));
   };
   const SubmitData = (e) => {
     e.preventDefault();
+    localStorage.setItem("email",login_credentials.email)
     console.log(login_credentials)
     axios
       .post("http://localhost:8080/api/user/login", login_credentials, {
         withCredentials: true,
       })
       .then((res) => {
+        console.log(res.data)
         if (res.status === 200) {
+         document.cookie= `email=${login_credentials.email}; path=/; max-age=86400; SameSite=Lax`;
           localStorage.setItem("otp", res.data.otp);
           alert(localStorage.getItem("otp"))
           navigate("/enter_otp");
         }
       })
       .catch((err) => {
+        console.log(err)
         if (err.response) {
           let msg;
 

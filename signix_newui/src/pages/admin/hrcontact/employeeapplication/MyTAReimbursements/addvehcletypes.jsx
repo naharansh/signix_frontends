@@ -3,6 +3,8 @@ import { Card, CardContent, CardFooter } from "../../../../../components/ui/card
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../../../components/ui/table";
 import { Button } from "../../../../../components/ui/Button";
 import { Input } from "../../../../../components/ui/input";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
 
 export const AddVechcle=()=>{
       const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
@@ -101,4 +103,22 @@ export const AddVechcle=()=>{
     </div>
         </>
     )
+}
+export const AddVechcles=()=>{
+   const columnhelper = createColumnHelper();
+                  const column = [
+                    columnhelper.accessor("sno", {
+                      header: "S.no",
+                      cell: (info) => info.getValue(),
+                    }),
+                    columnhelper.accessor("contactgroup", {
+                      header: "Contact Group",
+                      cell: (info) => info.getValue(),
+                    }),
+                  ];
+                  return (
+                    <>
+                      <DataTable data={data} columns={column} />
+                    </>
+                  );
 }

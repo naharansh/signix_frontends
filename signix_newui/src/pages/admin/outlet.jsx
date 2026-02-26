@@ -172,9 +172,11 @@ export const Outlets = () => {
                     alt="Dialer Icon"
                     className="w-6 h-6"
                   />
+                  <Link to="/admin/outlet/geotracker">
                   <span className="text-green-700 font-medium">
                     Geo Tracker
                   </span>
+                  </Link>
                 </Button>
                 <Button className=" w-full sm:w-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 hover:shadow-md transition-transform transform hover:scale-105 focus:ring-2 focus:ring-blue-400">
                  
@@ -189,7 +191,9 @@ export const Outlets = () => {
                     alt="Reports Icon"
                     className="w-6 h-6"
                   />
+                  <Link to="/admin/outlet/reports">
                   <span className="text-indigo-700 font-medium">Reports</span>
+                  </Link>
                 </Button>
                 <Button className=" w-full sm:w-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-green-50 hover:bg-green-100 hover:shadow-md transition-transform transform hover:scale-105 focus:ring-2 focus:ring-green-400">
                   <img
@@ -197,11 +201,16 @@ export const Outlets = () => {
                     alt="Dialer Icon"
                     className="w-6 h-6"
                   />
+                   <Link to="/admin/outlet/dispatch">
                   <span className="text-green-700 font-medium">Dispatch</span>
+                  </Link>
                 </Button>
                 <Button className=" w-full sm:w-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 hover:shadow-md transition-transform transform hover:scale-105 focus:ring-2 focus:ring-blue-400">
                   <img src={outlet.PJ} alt="Data Icon" className="w-6 h-6" />
+                  <Link to="/admin/outlet/PJP">
                   <span className="text-blue-700 font-medium">PJP</span>
+                  </Link>
+                  
                 </Button>
                 <Button className=" w-full sm:w-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 hover:shadow-md transition-transform transform hover:scale-105 focus:ring-2 focus:ring-indigo-400">
                   <img
@@ -209,9 +218,11 @@ export const Outlets = () => {
                     alt="Reports Icon"
                     className="w-6 h-6"
                   />
+                  <Link to="/admin/outlet/pricelist">
                   <span className="text-indigo-700 font-medium">
                     Price List
                   </span>
+                  </Link>
                 </Button>
                 <Button className=" w-full sm:w-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 hover:bg-gray-100 hover:shadow-md transition-transform transform hover:scale-105 focus:ring-2 focus:ring-gray-400">
                   <img
@@ -219,7 +230,9 @@ export const Outlets = () => {
                     alt="Settings Icon"
                     className="w-6 h-6"
                   />
+                   <Link to="/admin/outlet/settings">
                   <span className="text-gray-700 font-medium">Settings</span>
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -294,7 +307,9 @@ export const Outlets = () => {
 
             <CardFooter className="flex justify-start py-2">
               <Button className="px-6 w-full bg-blue-600 mx-0 hover:bg-blue-800 lg:w-80 lg:mx-10 ">
+                <Link to="/admin/outlet/settings/users">  
                 Manage Users
+                </Link>
               </Button>
             </CardFooter>
           </Card>
@@ -362,7 +377,9 @@ export const Outlets = () => {
 
             <CardFooter className="flex justify-start py-2">
               <Button className="px-6 w-full bg-blue-600 hover:bg-blue-800 lg:w-80 lg:mx-10 ">
+                {/* <Link to="/admin/outlet/settings/users">   */}
                 Manage Users
+                {/* </Link> */}
               </Button>
             </CardFooter>
           </Card>

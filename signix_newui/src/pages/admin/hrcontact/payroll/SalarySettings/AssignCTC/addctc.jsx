@@ -16,6 +16,8 @@ import {
   SelectValue,
 } from "../../../../../../components/ui/select";
 import { Button } from "../../../../../../components/ui/Button";
+import { DataTable } from "../../../../../../utils/datatable";
+import { createColumnHelper } from "@tanstack/react-table";
 
 export const Assign_CTC = () => {
   const logoRef = useRef(null);
@@ -567,3 +569,22 @@ export const Assign_CTC = () => {
     </>
   );
 };
+export const Assign_CTC_list=()=>{
+  const columnhelper = createColumnHelper();
+  const data=[]
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
+}

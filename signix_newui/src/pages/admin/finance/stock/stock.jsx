@@ -20,6 +20,8 @@ import {
 } from "../../../../components/ui/table";
 import { Textarea } from "../../../../components/ui/textarea";
 import { Button } from "../../../../components/ui/Button";
+import { DataTable } from "../../../../utils/datatable";
+import { createColumnHelper } from "@tanstack/react-table";
 
 export const Stocks = () => {
   const [items, setItems] = useState([
@@ -214,110 +216,108 @@ export const Stocks = () => {
           </div>
         </CardContent>
       </Card>
-       <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
-                <CardContent>
-                  <div className="w-full overflow-x-auto">
-                    <Table className="border border-gray-300 rounded-md min-w-[1600px]">
-                      <TableHeader className="sticky top-0 z-10 bg-gray-50">
-                        <TableRow>
-                          {[
-                            "S.no",
-                         "Name Of Item ",
-                            "Stock Type",
-                            "QC Type",
-                            "Qty",
-                            "Unit",
-                            "Rate (Inc.Tax)",
-                            "Rate(Tax.Extra)",
-                            "Amount",
-                            "Short Narration",
-      
-                            "Action",
-                          ].map((head) => (
-                            <TableHead
-                              key={head}
-                              className="border border-gray-300 font-semibold text-center px-3 py-2"
-                            >
-                              {head}
-                            </TableHead>
-                          ))}
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {items.map((item, index) => (
-                          <TableRow key={item.id} className="hover:bg-gray-100">
-                            <TableCell className="border border-gray-300 text-center px-3 py-2">
-                              {index + 1}
-                            </TableCell>
-                            <TableCell className="border border-gray-300 px-3 py-2 w-40 ">
-                              <Select
-                                placeholder="Select Bill to"
-                                onChange={(e) =>
-                                  updateItem(item.id, "name", e.target.value)
-                                }
-                              >
-                                <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Theme" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="light">Light</SelectItem>
-                                  <SelectItem value="dark">Dark</SelectItem>
-                                  <SelectItem value="system">System</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </TableCell>
-                            <TableCell className="border border-gray-300 px-3 py-2">
-                              <input
-                                type="number"
-                                className="w-20 border border-gray-300  px-2 py-1 "
-                                value={item.qty}
-                                onChange={(e) =>
-                                  updateItem(item.id, "qty", +e.target.value)
-                                }
-                              />
-                            </TableCell>
-                            <TableCell className="border border-gray-300 px-3 py-2">
-                              <input
-                                type="number"
-                                className="w-40 border border-gray-300 rounded-none px-2 py-1 "
-                                value={item.rate}
-                                onChange={(e) =>
-                                  updateItem(item.id, "rate", +e.target.value)
-                                }
-                              />
-                            </TableCell>
-                            <TableCell className="border border-gray-300 px-3 py-2">
-                              <input
-                                type="number"
-                                className="w-40 border border-gray-300 rounded-none px-2 py-1 "
-                                value={item.tax}
-                                onChange={(e) =>
-                                  updateItem(item.id, "tax", +e.target.value)
-                                }
-                              />
-                            </TableCell>
-                            <TableCell className="border border-gray-300 text-right px-3 py-2">
-                              ₹{" "}
-                              {(item.qty * item.rate * (1 + item.tax / 100)).toFixed(
-                                2,
-                              )}
-                            </TableCell>
-                            <TableCell className="border border-gray-300 text-center px-3 py-2">
-                              {index + 1}
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                      <TableFooter>
-                        <TableRow>
-                          <TableCell colSpan={8}>Total</TableCell>
-                          <TableCell>$2,500.00</TableCell>
-                        </TableRow>
-                      </TableFooter>
-                    </Table>
-                  </div>
-                </CardContent>
-              </Card>
+      <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
+        <CardContent>
+          <div className="w-full overflow-x-auto">
+            <Table className="border border-gray-300 rounded-md min-w-[1600px]">
+              <TableHeader className="sticky top-0 z-10 bg-gray-50">
+                <TableRow>
+                  {[
+                    "S.no",
+                    "Name Of Item ",
+                    "Stock Type",
+                    "QC Type",
+                    "Qty",
+                    "Unit",
+                    "Rate (Inc.Tax)",
+                    "Rate(Tax.Extra)",
+                    "Amount",
+                    "Short Narration",
+
+                    "Action",
+                  ].map((head) => (
+                    <TableHead
+                      key={head}
+                      className="border border-gray-300 font-semibold text-center px-3 py-2"
+                    >
+                      {head}
+                    </TableHead>
+                  ))}
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {items.map((item, index) => (
+                  <TableRow key={item.id} className="hover:bg-gray-100">
+                    <TableCell className="border border-gray-300 text-center px-3 py-2">
+                      {index + 1}
+                    </TableCell>
+                    <TableCell className="border border-gray-300 px-3 py-2 w-40 ">
+                      <Select
+                        placeholder="Select Bill to"
+                        onChange={(e) =>
+                          updateItem(item.id, "name", e.target.value)
+                        }
+                      >
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder="Theme" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="light">Light</SelectItem>
+                          <SelectItem value="dark">Dark</SelectItem>
+                          <SelectItem value="system">System</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </TableCell>
+                    <TableCell className="border border-gray-300 px-3 py-2">
+                      <input
+                        type="number"
+                        className="w-20 border border-gray-300  px-2 py-1 "
+                        value={item.qty}
+                        onChange={(e) =>
+                          updateItem(item.id, "qty", +e.target.value)
+                        }
+                      />
+                    </TableCell>
+                    <TableCell className="border border-gray-300 px-3 py-2">
+                      <input
+                        type="number"
+                        className="w-40 border border-gray-300 rounded-none px-2 py-1 "
+                        value={item.rate}
+                        onChange={(e) =>
+                          updateItem(item.id, "rate", +e.target.value)
+                        }
+                      />
+                    </TableCell>
+                    <TableCell className="border border-gray-300 px-3 py-2">
+                      <input
+                        type="number"
+                        className="w-40 border border-gray-300 rounded-none px-2 py-1 "
+                        value={item.tax}
+                        onChange={(e) =>
+                          updateItem(item.id, "tax", +e.target.value)
+                        }
+                      />
+                    </TableCell>
+                    <TableCell className="border border-gray-300 text-right px-3 py-2">
+                      ₹{" "}
+                      {(item.qty * item.rate * (1 + item.tax / 100)).toFixed(2)}
+                    </TableCell>
+                    <TableCell className="border border-gray-300 text-center px-3 py-2">
+                      {index + 1}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TableCell colSpan={8}>Total</TableCell>
+                  <TableCell>$2,500.00</TableCell>
+                </TableRow>
+              </TableFooter>
+            </Table>
+          </div>
+        </CardContent>
+      </Card>
       <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
         <CardContent>
           <div className="w-full ">
@@ -332,6 +332,25 @@ export const Stocks = () => {
           </div>
         </CardFooter>
       </Card>
+    </>
+  );
+};
+export const Stocks_Genernal_list = () => {
+  const data = [];
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
     </>
   );
 };

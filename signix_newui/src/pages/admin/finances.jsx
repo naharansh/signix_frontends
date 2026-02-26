@@ -6,13 +6,13 @@ import { vouchers, assets, contactuss, gst_docks,finances,inventorys,itemsSettin
 export const Vochours = () => {
   const navigate=useNavigate()
   let selectedMenu = [];
-  for (const menu of data.switchMenu[0].menus) {
-    if (menu.label === "Vochours") {
+  for (const menu of data.switchMenu.find((m) => m.id === "finance").menus) {
+    if (menu.id === "record-one") {
       selectedMenu = menu.subMenus;
       break;
     }
   }
-  
+
   return (
     <>
       <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -49,7 +49,7 @@ export const Ledger=()=>{
       break;
     }
   }
-  console.log(ledger)
+
   return (
     <>
      <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -187,8 +187,9 @@ export const Inventatory=()=>{
   )
 }
 export const AssetsAudit = () => {
+  const navigate=useNavigate()
   let assetsAudit = [];
-  for (const menu of data.switchMenu[0].menus) {
+  for (const menu of data.switchMenu.find((m) => m.id === "finance").menus) {
     if (menu.id === "record-sixth") {
       assetsAudit = menu.subMenus;
       break;
@@ -206,6 +207,7 @@ export const AssetsAudit = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -221,14 +223,16 @@ export const AssetsAudit = () => {
     </>
   );
 };
-export const BarCode = () => {
+export const BarCode = () => {//not done
   let Barcode = [];
+  
   const navigate=useNavigate()
   for (const menus of data.switchMenu.find((m) => m.id === "finance").menus) {
     if (menus.id === "record-seventh") {
       Barcode = menus.subMenus;
     }
   }
+ 
 
   return (
     <>
@@ -259,6 +263,7 @@ export const BarCode = () => {
 };
 export const GST_Management = () => {
   let gst = [];
+   const navigate=useNavigate()
   for (const menu of data.switchMenu.find((m) => m.id === "finance").menus) {
     if (menu.id === "record-eight") {
       gst = menu.subMenus;
@@ -277,6 +282,7 @@ export const GST_Management = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -295,7 +301,7 @@ export const GST_Management = () => {
 export const ContactManagement = () => {
   const navigate=useNavigate()
   let contactus = [];
-  for (const menu of data.switchMenu[0].menus) {
+  for (const menu of data.switchMenu.find((m) => m.id === "finance").menus) {
     if (menu.id === "record-ninth") {
       contactus = menu.subMenus;
       break;
@@ -331,6 +337,7 @@ export const ContactManagement = () => {
   );
 };
 export const WhiteBills = () => {
+  const navigate=useNavigate()
   let whiteBills = [];
   for (const menu of data.switchMenu.find((m) => m.id === "finance").menus) {
     if (menu.id === "record-tenth") {
@@ -349,6 +356,7 @@ export const WhiteBills = () => {
               <Card
                 key={menu.id}
                 className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
+                onClick={()=>{navigate(`${menu.route}`)}}
               >
                 <CardContent className="flex items-center h-full space-x-3">
                   <img src={Icon} className="w-10 h-10 object-contain" />
@@ -373,6 +381,7 @@ export const FinacialSettings=()=>{
       break;
     }
   }
+ 
   return (
     <>
      <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">

@@ -1,7 +1,9 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../../components/ui/Button";
 import { Card, CardContent, CardFooter } from "../../../../../components/ui/card";
 import { Input } from "../../../../../components/ui/input";
 import { Label } from "../../../../../components/ui/label";
+import { DataTable } from "../../../../../utils/datatable";
 
 export const Barcode_Settings = () => {
   return (
@@ -64,3 +66,30 @@ export const Barcode_Settings = () => {
     </>
   );
 };
+export const Barcode_Settings_list = () => {
+    const data=[]
+    const columnhelper=createColumnHelper()
+    const columns=[
+        columnhelper.accessor("sno",{
+            header:"S.no",
+        }),
+        columnhelper.accessor("barcodeid",{
+            header:"Barcode ID",
+        }),
+        columnhelper.accessor("batchlength",{
+            header:"Batch Length",
+        }),
+        columnhelper.accessor("seriallength",{
+            header:"Serial Length",
+        }),
+        columnhelper.accessor("printaliasbatchoninvoice",{
+            header:"Print Alias Batch On Invoice",
+        }),
+        columnhelper.accessor("aliasbatchoninvoiceid",{
+            header:"Alias Batch On Invoice ID",
+        }),
+    ]
+    return (
+      <DataTable columns={columns} data={data} />
+    )
+  }

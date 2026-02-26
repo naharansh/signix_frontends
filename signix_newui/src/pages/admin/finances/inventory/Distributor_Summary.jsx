@@ -1,3 +1,4 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../components/ui/Button";
 import {
   Card,
@@ -15,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../../components/ui/select";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Distributor_Summery = () => {
   return (
@@ -153,3 +155,20 @@ export const Distributor_Summery = () => {
     </>
   );
 };
+export const Distributor_Summeries=()=>{
+  console.log("DSFs")
+     const data=[]
+     const columnhelper=createColumnHelper()
+     const column=[
+        columnhelper.accessor("distributor_name",{  
+            header:"Distributor Name",}),
+        columnhelper.accessor("distributor_code",{
+            header:"Distributor Code",}),
+
+        ]
+        return (
+            <>
+             <DataTable columns={column} data={data}/>
+            </>
+        )
+}

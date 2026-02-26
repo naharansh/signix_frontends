@@ -20,6 +20,8 @@ import {
 } from "../../../../components/ui/table";
 import { Button } from "../../../../components/ui/Button";
 import { Textarea } from "../../../../components/ui/textarea";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../utils/datatable";
 
 export const AddProposedRespiect = () => {
   const [items, setItems] = useState([
@@ -252,3 +254,22 @@ export const AddProposedRespiect = () => {
     </>
   );
 };
+export const ProposedRespiect=()=>{
+  const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
+}

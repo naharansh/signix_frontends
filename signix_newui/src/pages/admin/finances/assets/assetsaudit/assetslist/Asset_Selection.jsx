@@ -1,3 +1,4 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../../../components/ui/Button";
 import {
   Card,
@@ -8,6 +9,7 @@ import {
 } from "../../../../../../components/ui/card";
 import { Input } from "../../../../../../components/ui/input";
 import { Label } from "../../../../../../components/ui/label";
+import { DataTable } from "../../../../../../utils/datatable";
 
 export const Asset_Selection = () => {
   return (
@@ -128,3 +130,71 @@ export const Asset_Selection = () => {
     </>
   );
 };
+export const Asset_selection_list = () => {
+  console.log("Dsf")
+   const data = [
+      {
+        cDt: "2023-01-01",  
+        Serial: "123456789",
+        Asset: "Laptop",
+        AssetID: "A001",  
+        AssetCode: "LAP-001",
+        Category: "Electronics",
+        CategoryID: "C001",
+        SubCategory: "Computers",
+        SubCategoryID: "SC001",
+        SubSubCategory: "Laptops",
+        SubSubCategoryID: "SSC001",
+        Bom: "Yes",
+        BomID: "BOM001",
+        Pic: "laptop.jpg",
+        PrimaryBeat: "North",
+      PrimaryBeatID: "PB001"
+  
+      },
+      {
+        cDt: "2023-02-01",
+        Serial: "987654321",  
+        Asset: "Projector",
+  
+        AssetID: "A002",
+        AssetCode: "PROJ-001",
+        Category: "Electronics",
+        CategoryID: "C001",
+        SubCategory: "Audio/Visual",
+        SubCategoryID: "SC002",
+        SubSubCategory: "Projectors",
+        SubSubCategoryID: "SSC002",
+        Bom: "No",
+        BomID: "BOM002",
+        Pic: "projector.jpg",
+        PrimaryBeat: "South",
+      PrimaryBeatID: "PB002"
+      },
+    ];
+    const columnhelper=createColumnHelper()
+    const columns=[
+      columnhelper.accessor("cDt", {
+        header: "Created Date",
+        cell: (info) => info.getValue(),
+      }),
+      columnhelper.accessor("Serial", {
+        header: "Serial Number",
+        cell: (info) => info.getValue(),
+      }),
+      columnhelper.accessor("Asset", {
+        header: "Asset Name",
+        cell: (info) => info.getValue(),
+      }),
+      columnhelper.accessor("AssetID", {
+        header: "Asset ID",
+        cell: (info) => info.getValue(),
+      }),
+    ]
+    return (
+      <DataTable
+        data={data}
+        columns={columns}
+      />
+    )
+}

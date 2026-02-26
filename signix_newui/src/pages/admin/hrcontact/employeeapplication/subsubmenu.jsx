@@ -1,5 +1,7 @@
+import { useNavigate } from 'react-router-dom'
 import { Card, CardContent } from '../../../../components/ui/card'
 import data from '../../../../utils/data.json'
+import {  dashboards, employee_applicationss } from '../../../../utils/iconmap'
 export const T_A_Reimbursements=()=>{
        const mainmenu=data.switchMenu.find(m=>m.id ==='hrm').menus
         
@@ -15,30 +17,30 @@ export const T_A_Reimbursements=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-one').subsubmenu
-       
+       const navigate=useNavigate()
     return (
         <>
           <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                           const Icon = employee_applicationss[menu.icon];
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -59,14 +61,14 @@ export const DA_Reimbursements=()=>{
             return
         }
         const submenu=mainmenu.find(sm=>sm.id==='record-four').subMenus
-        // console.log(submenu)
+       const Icon=dashboards
         
         if(!submenu)
         {
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-two').subsubmenu
-        console.log(subsubmenu)
+         const navigate=useNavigate()
     return (
         <>
           <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
@@ -79,17 +81,17 @@ export const DA_Reimbursements=()=>{
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -117,30 +119,30 @@ export const Leave_Applications=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-three').subsubmenu
-        console.log(subsubmenu)
+        const navigate=useNavigate()
         return (
             <>
             <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                           const Icon = employee_applicationss[menu.icon];
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -168,30 +170,30 @@ export const On_Duty_Call=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-four').subsubmenu
-        console.log(subsubmenu)
+       const navigate=useNavigate()
         return (
             <>
             <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                         const Icon = employee_applicationss[menu.icon];
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -219,30 +221,30 @@ export const Work_Day=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-five').subsubmenu
-        console.log(subsubmenu)
+        const navigate=useNavigate()
         return (
             <>
             <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                         const Icon = employee_applicationss[menu.icon];
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
-                               onClick={() => {
-                               
+                              onClick={() => {
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -270,30 +272,30 @@ export const Bonou_Insentive=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-six').subsubmenu
-        console.log(subsubmenu)
+      const navigate=useNavigate()
         return (
             <>
             <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                          const Icon = employee_applicationss[menu.icon];
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -321,30 +323,30 @@ export const Advance=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-seaven').subsubmenu
-        console.log(subsubmenu)
+        const navigate=useNavigate()
         return (
             <>
             <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                           const Icon = dashboards;
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -359,13 +361,13 @@ export const Advance=()=>{
 }
 export const Others=()=>{
      const mainmenu=data.switchMenu.find(m=>m.id ==='hrm').menus
-        
+        const Icon=dashboards
         if(!mainmenu)
         {
             return
         }
         const submenu=mainmenu.find(sm=>sm.id==='record-four').subMenus
-        // console.log(submenu)
+        const navigate=useNavigate()
         
         if(!submenu)
         {
@@ -384,18 +386,18 @@ export const Others=()=>{
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
-                               onClick={() => {
-                               
+                              onClick={() => {
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -410,7 +412,7 @@ export const Others=()=>{
 }
 export const Kaizen=()=>{
      const mainmenu=data.switchMenu.find(m=>m.id ==='hrm').menus
-        
+    
         if(!mainmenu)
         {
             return
@@ -423,30 +425,30 @@ export const Kaizen=()=>{
             return
         }
         const subsubmenu=submenu.find(ssm=>ssm.id==='submenu-ninth').subsubmenu
-        console.log(subsubmenu)
+        const navigate=useNavigate()
         return (
             <>
             <div className="my-10 mx-5 grid grid-cols-1 gap-6 justify-center lg:grid-cols-4 md:grid-cols-3">
                        {subsubmenu.length > 0 ? (
                          subsubmenu.map((menu) => {
-                        //    const Icon = gst_docks;
+                       const Icon = employee_applicationss[menu.icon];
                
                            return (
                              <Card
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
-                               onClick={() => {
-                               
+                              onClick={() => {
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>
@@ -461,7 +463,8 @@ export const Kaizen=()=>{
 }
 export const PMS=()=>{
      const mainmenu=data.switchMenu.find(m=>m.id ==='hrm').menus
-        
+            const Icon=dashboards
+            const navigate=useNavigate()
         if(!mainmenu)
         {
             return
@@ -487,17 +490,17 @@ export const PMS=()=>{
                                key={menu.id}
                                className="h-28 cursor-pointer rounded-sm bg-white hover:shadow-md"
                                onClick={() => {
-                               
+                                navigate(`${menu.route}`)
                                }}
                              >
                                <CardContent className="flex items-center h-full space-x-3">
-                                 {/* {Icon && (
+                                 {Icon && (
                                    <img
                                      src={Icon}
                                      alt={menu.label}
                                      className="w-10 h-10 object-contain"
                                    />
-                                 )} */}
+                                 )}
                                  <span className="text-sm font-semibold">{menu.label}</span>
                                </CardContent>
                              </Card>

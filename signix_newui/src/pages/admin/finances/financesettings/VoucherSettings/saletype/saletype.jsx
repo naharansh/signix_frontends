@@ -5,6 +5,8 @@ import { Card, CardContent, CardFooter } from "../../../../../../components/ui/c
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../../../../components/ui/table";
 import { Input } from "../../../../../../components/ui/input";
 import { Button } from "../../../../../../components/ui/Button";
+import { DataTable } from "../../../../../../utils/datatable";
+import { createColumnHelper } from "@tanstack/react-table";
 
 export  const Sale_Type=()=>{
         const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
@@ -93,4 +95,23 @@ export  const Sale_Type=()=>{
     </div>
         </>
     )
+}
+export const Sale_Type_List=()=>{
+    const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable columns={column} data={data} />
+            </>
+          );
 }

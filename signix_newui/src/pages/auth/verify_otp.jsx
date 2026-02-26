@@ -21,57 +21,46 @@ import {
 import { useState } from "react";
 import axios from "axios";
 export const Verify_OTP = () => {
-  const navigate=useNavigate()
-  const [otp,setOtp]=useState({
-    otp:''
-  })
+ const navigate = useNavigate()
 
-  const handleSubmit=(e)=>{
+  const [otp, setOtp] = useState("")
+  
+
+  function getCookie(name) {
+    return document.cookie
+      .split("; ")
+      .find(row => row.startsWith(name + "="))
+      ?.split("=")[1];
+  }
+
+  const handleSubmit = (e) => {
     e.preventDefault()
-    
-    
-axios.post(
-  "http://localhost:8080/api/user/verify",
-  { otp }, // no JSON.stringify
-  {
-    withCredentials: true,
-    
-  }
-).then((res) => {
-  console.log(res);
-  localStorage.clear()
-  navigate('/admin/dashboard')
 
-}).catch((err) => {
-   if (err.response) {
-    let msg;
+    const email = getCookie("email")
 
-    // normalize message
-    if (typeof err.response.data === "string") {
-      msg = err.response.data;
-    } else {
-      msg = err.response.data?.message || err.message;
+    if (!email) {
+      alert("Email cookie not found")
+      return
     }
 
-    switch (err.response.status) {
-      
-      case 400:
-        alert(msg || "Bad request");
-        break;
-      case 401:
-        alert(msg || "Unauthorized");
-        break;
-      case 404:
-        alert(msg || "Not found");
-        break;
-      default:
-        alert("An error occurred");
-    }
-  } else {
-   
-    alert(err.message);
-  }
-});
+    axios.post(
+      "http://localhost:8080/api/user/verify",
+      { otp, email },
+      { withCredentials: true }
+    )
+    .then((res) => {
+  
+      document.cookie=`token=${res.data.token};path=/; max-age=86400; SameSite=Lax`
+
+      navigate('/admin/dashboard')
+    })
+    .catch((err) => {
+      if (err.response) {
+        alert(err.response.data?.message || "Error occurred")
+      } else {
+        alert(err.message)
+      }
+    })
   }
   return (
     <>

@@ -9,6 +9,7 @@ export const Logout = () => {
     axios
       .get("http://localhost:8080/api/user/logout", { withCredentials: true })
       .then((res) => {
+        localStorage.clear()
         console.log(res.data);
       
         navigate("/");

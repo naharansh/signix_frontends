@@ -1,3 +1,4 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../components/ui/Button";
 import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
@@ -18,6 +19,7 @@ import {
   TableRow,
 } from "../../../../components/ui/table";
 import { Textarea } from "../../../../components/ui/textarea";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Manufactures = () => {
   return (
@@ -202,7 +204,7 @@ export const Manufactures = () => {
             </div>
           </CardFooter>
         </Card>
-          <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
+        <Card className="shadow-md rounded-none mx-5 border border-gray-200 my-4">
           <CardContent>
             <div className="w-full ">
               <Label>Textarea</Label>
@@ -218,6 +220,25 @@ export const Manufactures = () => {
           </CardFooter>
         </Card>
       </div>
+    </>
+  );
+};
+export const Manufactures_list = () => {
+  const data = [];
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
     </>
   );
 };

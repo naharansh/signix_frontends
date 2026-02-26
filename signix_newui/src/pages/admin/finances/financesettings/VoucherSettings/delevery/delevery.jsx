@@ -3,6 +3,8 @@ import { Button } from "../../../../../../components/ui/Button"
 import { Card, CardContent, CardFooter } from "../../../../../../components/ui/card"
 import { Input } from "../../../../../../components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../../../../components/ui/table"
+import { createColumnHelper } from "@tanstack/react-table"
+import { DataTable } from "../../../../../../utils/datatable"
 
 export const Delevery_patch=()=>{
         const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
@@ -89,4 +91,23 @@ export const Delevery_patch=()=>{
       </div>
         </>
     )
+}
+export const Delevery_patch_list=()=>{
+    const data = [];
+        const columnhelper = createColumnHelper();
+        const column = [
+          columnhelper.accessor("sno", {
+            header: "S.no",
+            cell: (info) => info.getValue(),
+          }),
+          columnhelper.accessor("contactgroup", {
+            header: "Contact Group",
+            cell: (info) => info.getValue(),
+          }),
+        ];
+        return (
+          <>
+            <DataTable columns={column} data={data} />
+          </>
+        );
 }

@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
-import { Input } from "../../../../components/ui/input";
-import { Label } from "../../../../components/ui/label";
+import { Card, CardContent, CardFooter } from "../../../../../components/ui/card";
+import { Input } from "../../../../../components/ui/input";
+import { Label } from "../../../../../components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../../../components/ui/select";
+} from "../../../../../components/ui/select";
 import {
   Table,
   TableBody,
@@ -16,8 +16,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../../components/ui/table";
-import { Button } from "../../../../components/ui/Button";
+} from "../../../../../components/ui/table";
+import { Button } from "../../../../../components/ui/Button";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../utils/datatable";
 
 export const Add_Opening_Stock = () => {
     const [items, setItems] = useState([
@@ -205,3 +207,35 @@ export const Add_Opening_Stock = () => {
     </>
   );
 };
+export const Stock_In_Hand=()=>{
+  const data=[]
+  const columnhelper=createColumnHelper()
+  const column=[
+    columnhelper.accessor("item_name",{
+        header:"Item Name",}),
+    columnhelper.accessor("item_code",{
+        header:"Item Code",}),
+    columnhelper.accessor("unit",{}),
+  ]
+  return (
+    <>
+    <DataTable columns={column} data={data}/>
+    </>
+  )
+}
+export const Stock=()=>{
+   const data=[]
+  const columnhelper=createColumnHelper()
+  const column=[
+    columnhelper.accessor("item_name",{
+        header:"Item Name",}),
+    columnhelper.accessor("item_code",{
+        header:"Item Code",}),
+    columnhelper.accessor("unit",{}),
+  ]
+  return (
+    <>
+    <DataTable columns={column} data={data}/>
+    </>
+  )
+}

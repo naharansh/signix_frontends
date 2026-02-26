@@ -1,3 +1,4 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../../components/ui/Button";
 import {
   Card,
@@ -10,6 +11,7 @@ import { Input } from "../../../../../components/ui/input";
 import { Label } from "../../../../../components/ui/label";
 import { RadioGroup, RadioGroupItem } from "../../../../../components/ui/radio-group";
 import { Textarea } from "../../../../../components/ui/textarea";
+import { DataTable } from "../../../../../utils/datatable";
 export const Add_kaizen = () => {
   return (
     <>
@@ -269,3 +271,22 @@ export const Add_kaizen = () => {
     </>
   );
 };
+export const Kaizen=()=>{
+  const data = [];
+          const columnhelper = createColumnHelper();
+          const column = [
+            columnhelper.accessor("sno", {
+              header: "S.no",
+              cell: (info) => info.getValue(),
+            }),
+            columnhelper.accessor("contactgroup", {
+              header: "Contact Group",
+              cell: (info) => info.getValue(),
+            }),
+          ];
+          return (
+            <>
+              <DataTable data={data} columns={column} />
+            </>
+          );
+}

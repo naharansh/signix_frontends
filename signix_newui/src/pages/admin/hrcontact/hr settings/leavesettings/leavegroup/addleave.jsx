@@ -14,6 +14,8 @@ import {
   TableRow,
 } from "../../../../../../components/ui/table";
 import { Input } from "../../../../../../components/ui/input";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "../../../../../../utils/datatable";
 
 export const Add_leaveGroup = () => {
   const [rows, setRows] = useState([{ id: 1, bom: "", bomCode: "" }]);
@@ -104,3 +106,22 @@ export const Add_leaveGroup = () => {
     </>
   );
 };
+export const Leave_Group_list=()=>{
+    const columnhelper = createColumnHelper();
+    const data=[]
+                  const column = [
+                    columnhelper.accessor("sno", {
+                      header: "S.no",
+                      cell: (info) => info.getValue(),
+                    }),
+                    columnhelper.accessor("contactgroup", {
+                      header: "Contact Group",
+                      cell: (info) => info.getValue(),
+                    }),
+                  ];
+                  return (
+                    <>
+                      <DataTable data={data} columns={column} />
+                    </>
+                  );
+}

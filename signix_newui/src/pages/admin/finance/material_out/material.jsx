@@ -1,7 +1,9 @@
+import { createColumnHelper } from "@tanstack/react-table";
 import { Button } from "../../../../components/ui/Button";
 import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
+import { DataTable } from "../../../../utils/datatable";
 
 export const Add_Material_TDSs = () => {
   return (
@@ -11,7 +13,7 @@ export const Add_Material_TDSs = () => {
           <CardContent className="px-7">
             <div className="grid grid-cols-3 items-center gap-12 my-3">
               <Label className="text-sm font-medium text-gray-600 ">
-                Issue From 
+                Issue From
               </Label>
 
               <Input
@@ -155,7 +157,7 @@ export const Add_Material_TDSs = () => {
             </div>
             <div className="grid grid-cols-3 items-center gap-12 my-">
               <Label className="text-sm font-medium text-gray-600 ">
-               Taxable Value
+                Taxable Value
               </Label>
 
               <Input
@@ -263,7 +265,7 @@ export const Add_Material_TDSs = () => {
 
             <div className="grid grid-cols-3 items-center gap-12 my-3">
               <Label className="text-sm font-medium text-gray-600 ">
-               IssueFromID 
+                IssueFromID
               </Label>
 
               <Input
@@ -293,7 +295,7 @@ export const Add_Material_TDSs = () => {
             </div>
             <div className="grid grid-cols-3 items-center gap-12 my-">
               <Label className="text-sm font-medium text-gray-600 ">
-        Issue To 
+                Issue To
               </Label>
 
               <Input
@@ -309,7 +311,7 @@ export const Add_Material_TDSs = () => {
 
             <div className="grid grid-cols-3 items-center gap-12 my-3">
               <Label className="text-sm font-medium text-gray-600 ">
-            Issue To ID
+                Issue To ID
               </Label>
 
               <Input
@@ -324,7 +326,7 @@ export const Add_Material_TDSs = () => {
             </div>
             <div className="grid grid-cols-3 items-center gap-12 my-3">
               <Label className="text-sm font-medium text-gray-600 ">
-              Ship To ID
+                Ship To ID
               </Label>
 
               <Input
@@ -339,7 +341,7 @@ export const Add_Material_TDSs = () => {
             </div>
             <div className="grid grid-cols-3 items-center gap-12 my-">
               <Label className="text-sm font-medium text-gray-600 ">
-               Issue To GroupID
+                Issue To GroupID
               </Label>
 
               <Input
@@ -553,6 +555,25 @@ export const Add_Material_TDSs = () => {
           </CardFooter>
         </Card>
       </div>
+    </>
+  );
+};
+export const Material_Out_TDSs = () => {
+  const data = [];
+  const columnhelper = createColumnHelper();
+  const column = [
+    columnhelper.accessor("sno", {
+      header: "S.no",
+      cell: (info) => info.getValue(),
+    }),
+    columnhelper.accessor("contactgroup", {
+      header: "Contact Group",
+      cell: (info) => info.getValue(),
+    }),
+  ];
+  return (
+    <>
+      <DataTable data={data} columns={column} />
     </>
   );
 };
